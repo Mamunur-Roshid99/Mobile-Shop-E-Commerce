@@ -17,7 +17,7 @@ const CartBadge = ({ count = 0, onClick }) => {
       >
         <FiShoppingCart
           className="hover:text-green-600"
-          size={24}
+          size={22}
           color="#253D4E"
         />
       </Badge>

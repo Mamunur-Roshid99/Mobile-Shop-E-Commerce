@@ -47,7 +47,7 @@ const Navbar = () => {
           </div>
         </div>
         {/* Dekstop Layout */}
-        <div className="hidden lg:flex items-center justify-between py-6">
+        <div className="hidden lg:flex items-center justify-between py-5">
           {/* logo & search */}
           <div className="flex items-center gap-14">
             {/* logo */}
