@@ -11,6 +11,7 @@ const CakeMilkContent = ({ onCategoryClick }) => {
     {
       title: "Chocolate Cake",
       image: "/images/1.png",
+      bgcolor: "#FFFCEB",
       products: [
         {
           title: "Choco Slice",
@@ -27,6 +28,7 @@ const CakeMilkContent = ({ onCategoryClick }) => {
     {
       title: "Vanilla Cake",
       image: "/images/1.png",
+      bgcolor: "#F2FCE4",
       products: [
         {
           title: "Vanilla Slice",
@@ -43,6 +45,7 @@ const CakeMilkContent = ({ onCategoryClick }) => {
     {
       title: "Strawberry Milkshake",
       image: "/images/1.png",
+      bgcolor: "#ECFFEC",
       products: [
         {
           title: "Strawberry Shake",
@@ -59,6 +62,7 @@ const CakeMilkContent = ({ onCategoryClick }) => {
     {
       title: "Chocolate Cake",
       image: "/images/1.png",
+      bgcolor: "#FEEFEA",
       products: [
         {
           title: "Choco Slice",
@@ -75,6 +79,7 @@ const CakeMilkContent = ({ onCategoryClick }) => {
     {
       title: "Vanilla Cake",
       image: "/images/1.png",
+      bgcolor: "#FFF3EB",
       products: [
         {
           title: "Vanilla Slice",
@@ -91,6 +96,7 @@ const CakeMilkContent = ({ onCategoryClick }) => {
     {
       title: "Strawberry Milkshake",
       image: "/images/1.png",
+      bgcolor: "#FFF3FF",
       products: [
         {
           title: "Strawberry Shake",
@@ -107,6 +113,7 @@ const CakeMilkContent = ({ onCategoryClick }) => {
     {
       title: "Chocolate Cake",
       image: "/images/1.png",
+      bgcolor: "#F2FCE4",
       products: [
         {
           title: "Choco Slice",
@@ -123,6 +130,7 @@ const CakeMilkContent = ({ onCategoryClick }) => {
     {
       title: "Vanilla Cake",
       image: "/images/1.png",
+      bgcolor: "#FEEFEA",
       products: [
         {
           title: "Vanilla Slice",
@@ -139,7 +147,18 @@ const CakeMilkContent = ({ onCategoryClick }) => {
     {
       title: "Strawberry Milkshake",
       image: "/images/1.png",
+      bgcolor: "#F2FCE4",
       products: [
+        {
+          title: "Strawberry Shake",
+          image: "/images/1.png",
+          price: 180,
+        },
+        {
+          title: "Strawberry Ice Cream",
+          image: "/images/1.png",
+          price: 150,
+        },
         {
           title: "Strawberry Shake",
           image: "/images/1.png",
@@ -171,7 +190,8 @@ const CakeMilkContent = ({ onCategoryClick }) => {
         {categories.map((cat, idx) => (
           <SwiperSlide key={idx}>
             <div
-              className="bg-[#F2FCE4] flex flex-col items-center justify-center rounded-sm border border-[#F4F6FA] pb-5 h-full text-center cursor-pointer"
+              className="flex flex-col items-center justify-center rounded-sm border border-[#F4F6FA] pb-5 h-full text-center cursor-pointer"
+              style={{ backgroundColor: cat.bgcolor }}
               onClick={() => onCategoryClick(cat.products)}
             >
               <img

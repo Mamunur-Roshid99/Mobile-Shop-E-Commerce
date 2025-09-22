@@ -15,7 +15,7 @@ export default function CategoryDropdown() {
   const [selectedCategory, setSelectedCategory] = useState("All Category");
 
   return (
-    <div className="relative inline-block text-left">
+    <div className="relative inline-block text-left z-50">
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="inline-flex justify-between w-32 text-sm text-[#253D4E] focus:outline-none font-semibold"

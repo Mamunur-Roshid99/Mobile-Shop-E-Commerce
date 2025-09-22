@@ -31,12 +31,12 @@ const NavLink = () => {
     { href: "/contact", label: "Contact" },
   ];
   return (
-    <div className="border-b border-b-[#ECECEC] hidden lg:block ">
+    <div className="border-b border-b-[#ECECEC] hidden lg:block">
       <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-14 flex items-center justify-between py-3">
         {/* category & links */}
         <div className="flex items-center gap-10">
           {/* category */}
-          <div className="relative inline-block text-left bg-[#3BB77E] text-white px-4 py-2 rounded-sm gap-5">
+          <div className="relative inline-block text-left bg-[#3BB77E] text-white px-4 py-2 rounded-sm gap-5 z-10">
             <BiCategoryAlt className="inline-flex text-xl" />
             <button
               onClick={() => setIsOpen(!isOpen)}

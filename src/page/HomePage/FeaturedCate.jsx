@@ -9,6 +9,7 @@ import CoffeeTeaContent from "@/components/CoffeeTeaContent";
 import PetFoodsContent from "@/components/PetFoodsContent";
 import VegetablesContent from "@/components/VegetablesContent";
 import CakeMilkContent from "@/components/CakeMilkContent ";
+import { FaArrowRight } from "react-icons/fa6";
 
 const FeaturedCate = () => {
   const [activeTab, setActiveTab] = useState("cakemilk");
@@ -18,13 +19,179 @@ const FeaturedCate = () => {
   const handleTabClick = (tab) => {
     setLoading(true);
     setActiveTab(tab);
-    setSelectedCategoryProducts([]); // clear previous products
+    setSelectedCategoryProducts([]);
     setTimeout(() => setLoading(false), 500);
   };
 
   const handleCategoryClick = (products) => {
     setSelectedCategoryProducts(products);
   };
+
+  const categories = [
+    {
+      title: "Chocolate Cake",
+      image: "/images/1.png",
+      bgcolor: "#FFFCEB",
+      products: [
+        {
+          title: "Choco Slice",
+          image: "/images/1.png",
+          price: 250,
+        },
+        {
+          title: "Choco Roll",
+          image: "/images/1.png",
+          price: 300,
+        },
+      ],
+    },
+    {
+      title: "Vanilla Cake",
+      image: "/images/1.png",
+      bgcolor: "#F2FCE4",
+      products: [
+        {
+          title: "Vanilla Slice",
+          image: "/images/1.png",
+          price: 200,
+        },
+        {
+          title: "Vanilla Roll",
+          image: "/images/1.png",
+          price: 220,
+        },
+      ],
+    },
+    {
+      title: "Strawberry Milkshake",
+      image: "/images/1.png",
+      bgcolor: "#ECFFEC",
+      products: [
+        {
+          title: "Strawberry Shake",
+          image: "/images/1.png",
+          price: 180,
+        },
+        {
+          title: "Strawberry Ice Cream",
+          image: "/images/1.png",
+          price: 150,
+        },
+      ],
+    },
+    {
+      title: "Chocolate Cake",
+      image: "/images/1.png",
+      bgcolor: "#FEEFEA",
+      products: [
+        {
+          title: "Choco Slice",
+          image: "/images/1.png",
+          price: 250,
+        },
+        {
+          title: "Choco Roll",
+          image: "/images/1.png",
+          price: 300,
+        },
+      ],
+    },
+    {
+      title: "Vanilla Cake",
+      image: "/images/1.png",
+      bgcolor: "#FFF3EB",
+      products: [
+        {
+          title: "Vanilla Slice",
+          image: "/images/1.png",
+          price: 200,
+        },
+        {
+          title: "Vanilla Roll",
+          image: "/images/1.png",
+          price: 220,
+        },
+      ],
+    },
+    {
+      title: "Strawberry Milkshake",
+      image: "/images/1.png",
+      bgcolor: "#FFF3FF",
+      products: [
+        {
+          title: "Strawberry Shake",
+          image: "/images/1.png",
+          price: 180,
+        },
+        {
+          title: "Strawberry Ice Cream",
+          image: "/images/1.png",
+          price: 150,
+        },
+      ],
+    },
+    {
+      title: "Chocolate Cake",
+      image: "/images/1.png",
+      bgcolor: "#F2FCE4",
+      products: [
+        {
+          title: "Choco Slice",
+          image: "/images/1.png",
+          price: 250,
+        },
+        {
+          title: "Choco Roll",
+          image: "/images/1.png",
+          price: 300,
+        },
+      ],
+    },
+    {
+      title: "Vanilla Cake",
+      image: "/images/1.png",
+      bgcolor: "#FEEFEA",
+      products: [
+        {
+          title: "Vanilla Slice",
+          image: "/images/1.png",
+          price: 200,
+        },
+        {
+          title: "Vanilla Roll",
+          image: "/images/1.png",
+          price: 220,
+        },
+      ],
+    },
+    {
+      title: "Strawberry Milkshake",
+      image: "/images/1.png",
+      bgcolor: "#F2FCE4",
+      products: [
+        {
+          title: "Strawberry Shake",
+          image: "/images/1.png",
+          price: 180,
+        },
+        {
+          title: "Strawberry Ice Cream",
+          image: "/images/1.png",
+          price: 150,
+        },
+        {
+          title: "Strawberry Shake",
+          image: "/images/1.png",
+          price: 180,
+        },
+        {
+          title: "Strawberry Ice Cream",
+          image: "/images/1.png",
+          price: 150,
+        },
+      ],
+    },
+  ];
 
   return (
     <div className="pb-10">
@@ -104,24 +271,77 @@ const FeaturedCate = () => {
         </div>
 
         {/* Products */}
-        <div className="mt-10 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
-          {selectedCategoryProducts.length > 0 ? (
-            selectedCategoryProducts.map((product, idx) => (
-              <div key={idx} className="border rounded p-2 text-center">
-                <img
-                  src={product.image}
-                  alt={product.title}
-                  className="w-full h-24 object-cover mb-2 rounded"
-                />
-                <h2 className="font-bold text-sm">{product.title}</h2>
-                <p className="text-gray-500 text-sm">৳{product.price}</p>
-              </div>
-            ))
-          ) : (
-            <p className="text-gray-400 col-span-full">
-              Click on a category card to see all products
-            </p>
-          )}
+        <div className="mt-7 w-full">
+          <div className="max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+              {selectedCategoryProducts.length > 0
+                ? selectedCategoryProducts.map((product, idx) => (
+                    <div
+                      key={idx}
+                      className="bg-[#f3e8e8] rounded-lg p-4 flex items-center justify-between"
+                    >
+                      {/* left */}
+                      <div>
+                        <h1 className="text-[#253D4E] font-bold text-2xl mb-2">
+                          {product.title}
+                        </h1>
+                        <p className="text-[#000000] font-semibold text-lg mb-4">
+                          Price:{" "}
+                          <span className="text-[#3BB77E]">
+                            ${product.price}
+                          </span>
+                        </p>
+                        <div className="bg-[#3BB77E] text-white flex items-center gap-2 w-28 text-sm p-2 rounded-sm font-medium cursor-pointer">
+                          <span>Shop Now</span>
+                          <FaArrowRight />
+                        </div>
+                      </div>
+                      {/* right */}
+                      <div className="w-[45%] md:w-[50%] lg:w-[60%]">
+                        <img
+                          src={product.image}
+                          alt={product.title}
+                          className="w-full"
+                        />
+                      </div>
+                    </div>
+                  ))
+                : categories
+                    .flatMap((cat) => cat.products)
+                    .slice(0, 6)
+                    .map((product, idx) => (
+                      <div
+                        key={idx}
+                        className="bg-[#f3e8e8] rounded-lg p-4 flex items-center justify-between"
+                      >
+                        {/* left */}
+                        <div>
+                          <h1 className="text-[#253D4E] font-bold text-2xl mb-2">
+                            {product.title}
+                          </h1>
+                          <p className="text-[#000000] font-semibold text-lg mb-4">
+                            Price:{" "}
+                            <span className="text-[#3BB77E]">
+                              ${product.price}
+                            </span>
+                          </p>
+                          <div className="bg-[#3BB77E] text-white flex items-center gap-2 w-28 text-sm p-2 rounded-sm font-medium cursor-pointer">
+                            <span>Shop Now</span>
+                            <FaArrowRight />
+                          </div>
+                        </div>
+                        {/* right */}
+                        <div className="w-[45%] md:w-[50%] lg:w-[60%]">
+                          <img
+                            src={product.image}
+                            alt={product.title}
+                            className="w-full"
+                          />
+                        </div>
+                      </div>
+                    ))}
+            </div>
+          </div>
         </div>
       </div>
     </div>
