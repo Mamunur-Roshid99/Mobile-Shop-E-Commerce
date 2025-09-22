@@ -29,7 +29,7 @@ const products = [
   },
   {
     id: 2,
-    title: "Fresh Mango",
+    title: "Foster Farms Takeout Crispy Classic",
     category: "Fresh Fruits",
     image: "/images/chips.png",
     rating: 4,
@@ -41,7 +41,7 @@ const products = [
   },
   {
     id: 3,
-    title: "Milk Pack",
+    title: "Foster Farms Takeout Crispy Classic",
     category: "Milks & Dairies",
     image: "/images/chips.png",
     rating: 4,
@@ -53,7 +53,7 @@ const products = [
   },
   {
     id: 4,
-    title: "Chicken Meat",
+    title: "Foster Farms Takeout Crispy Classic",
     category: "Meats",
     image: "/images/chips.png",
     rating: 4,
@@ -66,7 +66,7 @@ const products = [
   },
   {
     id: 5,
-    title: "Potato",
+    title: "Foster Farms Takeout Crispy Classic",
     category: "Vegetables",
     image: "/images/chips.png",
     rating: 4,
@@ -78,7 +78,7 @@ const products = [
   },
   {
     id: 6,
-    title: "French Fries",
+    title: "Foster Farms Takeout Crispy Classic",
     category: "Baking material",
     image: "/images/chips.png",
     rating: 3,

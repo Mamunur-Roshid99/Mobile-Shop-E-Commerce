@@ -2,6 +2,7 @@ import React from 'react'
 import HeroSection from './HeroSection'
 import FeaturedCate from './FeaturedCate'
 import PopularProduct from './PopularProduct'
+import DealsDay from './DealsDay'
 
 export default function Index() {
   return (
@@ -9,6 +10,7 @@ export default function Index() {
       <HeroSection />
       <FeaturedCate />
       <PopularProduct />
+      <DealsDay />
     </div>
   )
 }
