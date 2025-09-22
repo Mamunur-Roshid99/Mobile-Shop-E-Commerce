@@ -22,7 +22,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="border-b border-b-[#ECECEC]">
+    <nav className="border-b border-b-[#ECECEC] sticky top-0 bg-white z-50">
       <header className="max-w-7xl mx-auto px-6 md:px-10 lg:px-14">
         {/* mobile & tablet layout */}
         <div className="flex items-center justify-between py-4 lg:hidden">

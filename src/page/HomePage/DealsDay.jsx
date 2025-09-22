@@ -15,7 +15,7 @@ const hotDeals = [
   {
     id: 2,
     title: "Organic Cage Grade A Large Eggs",
-    image: "/images/deals.png",
+    image: "/images/deals2.png",
     provider: "Hambger Hel",
     price: "$21.00",
     discountPrice: "$24.00",
@@ -23,7 +23,7 @@ const hotDeals = [
   {
     id: 3,
     title: "Organic Cage Grade A Large Eggs",
-    image: "/images/deals.png",
+    image: "/images/deals3.png",
     provider: "Hambger Hel",
     price: "$21.00",
     discountPrice: "$24.00",
@@ -31,7 +31,7 @@ const hotDeals = [
   {
     id: 3,
     title: "Organic Cage Grade A Large Eggs",
-    image: "/images/deals.png",
+    image: "/images/deals4.png",
     provider: "Hambger Hel",
     price: "$21.00",
     discountPrice: "$24.00",
@@ -40,7 +40,7 @@ const hotDeals = [
 
 const DealsDay = () => {
   return (
-    <div className="pb-10">
+    <div className="pb-12">
       <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-14">
         {/*  */}
         <div>

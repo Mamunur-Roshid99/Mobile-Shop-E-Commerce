@@ -7,171 +7,171 @@ import "swiper/css";
 import "swiper/css/navigation";
 
 const PetFoodsContent = ({ onCategoryClick }) => {
-  const categories = [
-    {
-      title: "Chocolate Cake",
-      image: "/images/1.png",
-      bgcolor: "#FFFCEB",
-      products: [
-        {
-          title: " Slice",
-          image: "/images/1.png",
-          price: 250,
-        },
-        {
-          title: "Choco Roll",
-          image: "/images/1.png",
-          price: 300,
-        },
-      ],
-    },
-    {
-      title: "Vanilla Cake",
-      image: "/images/1.png",
-      bgcolor: "#F2FCE4",
-      products: [
-        {
-          title: "Vanilla Slice",
-          image: "/images/1.png",
-          price: 200,
-        },
-        {
-          title: "Vanilla Roll",
-          image: "/images/1.png",
-          price: 220,
-        },
-      ],
-    },
-    {
-      title: "Strawberry Milkshake",
-      image: "/images/1.png",
-      bgcolor: "#ECFFEC",
-      products: [
-        {
-          title: "Strawberry Shake",
-          image: "/images/1.png",
-          price: 180,
-        },
-        {
-          title: "Strawberry Ice Cream",
-          image: "/images/1.png",
-          price: 150,
-        },
-      ],
-    },
-    {
-      title: "Chocolate Cake",
-      image: "/images/1.png",
-      bgcolor: "#FEEFEA",
-      products: [
-        {
-          title: "Choco Slice",
-          image: "/images/1.png",
-          price: 250,
-        },
-        {
-          title: "Choco Roll",
-          image: "/images/1.png",
-          price: 300,
-        },
-      ],
-    },
-    {
-      title: "Vanilla Cake",
-      image: "/images/1.png",
-      bgcolor: "#FFF3EB",
-      products: [
-        {
-          title: "Vanilla Slice",
-          image: "/images/1.png",
-          price: 200,
-        },
-        {
-          title: "Vanilla Roll",
-          image: "/images/1.png",
-          price: 220,
-        },
-      ],
-    },
-    {
-      title: "Strawberry Milkshake",
-      image: "/images/1.png",
-      bgcolor: "#FFF3FF",
-      products: [
-        {
-          title: "Strawberry Shake",
-          image: "/images/1.png",
-          price: 180,
-        },
-        {
-          title: "Strawberry Ice Cream",
-          image: "/images/1.png",
-          price: 150,
-        },
-      ],
-    },
-    {
-      title: "Chocolate Cake",
-      image: "/images/1.png",
-      bgcolor: "#F2FCE4",
-      products: [
-        {
-          title: "Choco Slice",
-          image: "/images/1.png",
-          price: 250,
-        },
-        {
-          title: "Choco Roll",
-          image: "/images/1.png",
-          price: 300,
-        },
-      ],
-    },
-    {
-      title: "Vanilla Cake",
-      image: "/images/1.png",
-      bgcolor: "#FEEFEA",
-      products: [
-        {
-          title: "Vanilla Slice",
-          image: "/images/1.png",
-          price: 200,
-        },
-        {
-          title: "Vanilla Roll",
-          image: "/images/1.png",
-          price: 220,
-        },
-      ],
-    },
-    {
-      title: "Strawberry Milkshake",
-      image: "/images/1.png",
-      bgcolor: "#F2FCE4",
-      products: [
-        {
-          title: "Strawberry Shake",
-          image: "/images/1.png",
-          price: 180,
-        },
-        {
-          title: "Strawberry Ice Cream",
-          image: "/images/1.png",
-          price: 150,
-        },
-        {
-          title: "Strawberry Shake",
-          image: "/images/1.png",
-          price: 180,
-        },
-        {
-          title: "Strawberry Ice Cream",
-          image: "/images/1.png",
-          price: 150,
-        },
-      ],
-    },
-  ];
+   const categories = [
+     {
+       title: "Chocolate Cake",
+       image: "/images/1.png",
+       bgcolor: "#FFFCEB",
+       products: [
+         {
+           title: "Choco Slice",
+           image: "/images/1.png",
+           price: 250,
+         },
+         {
+           title: "Choco Roll",
+           image: "/images/2.png",
+           price: 300,
+         },
+       ],
+     },
+     {
+       title: "Vanilla Cake",
+       image: "/images/2.png",
+       bgcolor: "#F2FCE4",
+       products: [
+         {
+           title: "Vanilla Slice",
+           image: "/images/1.png",
+           price: 200,
+         },
+         {
+           title: "Vanilla Roll",
+           image: "/images/2.png",
+           price: 220,
+         },
+       ],
+     },
+     {
+       title: "Strawberry Milkshake",
+       image: "/images/1.png",
+       bgcolor: "#ECFFEC",
+       products: [
+         {
+           title: "Strawberry Shake",
+           image: "/images/3.png",
+           price: 180,
+         },
+         {
+           title: "Strawberry Ice Cream",
+           image: "/images/2.png",
+           price: 150,
+         },
+       ],
+     },
+     {
+       title: "Chocolate Cake",
+       image: "/images/1.png",
+       bgcolor: "#FEEFEA",
+       products: [
+         {
+           title: "Choco Slice",
+           image: "/images/4.png",
+           price: 250,
+         },
+         {
+           title: "Choco Roll",
+           image: "/images/2.png",
+           price: 300,
+         },
+       ],
+     },
+     {
+       title: "Vanilla Cake",
+       image: "/images/5.png",
+       bgcolor: "#FFF3EB",
+       products: [
+         {
+           title: "Vanilla Slice",
+           image: "/images/1.png",
+           price: 200,
+         },
+         {
+           title: "Vanilla Roll",
+           image: "/images/2.png",
+           price: 220,
+         },
+       ],
+     },
+     {
+       title: "Strawberry Milkshake",
+       image: "/images/7.png",
+       bgcolor: "#FFF3FF",
+       products: [
+         {
+           title: "Strawberry Shake",
+           image: "/images/1.png",
+           price: 180,
+         },
+         {
+           title: "Strawberry Ice Cream",
+           image: "/images/2.png",
+           price: 150,
+         },
+       ],
+     },
+     {
+       title: "Chocolate Cake",
+       image: "/images/8.png",
+       bgcolor: "#F2FCE4",
+       products: [
+         {
+           title: "Choco Slice",
+           image: "/images/1.png",
+           price: 250,
+         },
+         {
+           title: "Choco Roll",
+           image: "/images/2.png",
+           price: 300,
+         },
+       ],
+     },
+     {
+       title: "Vanilla Cake",
+       image: "/images/1.png",
+       bgcolor: "#FEEFEA",
+       products: [
+         {
+           title: "Vanilla Slice",
+           image: "/images/1.png",
+           price: 200,
+         },
+         {
+           title: "Vanilla Roll",
+           image: "/images/2.png",
+           price: 220,
+         },
+       ],
+     },
+     {
+       title: "Strawberry Milkshake",
+       image: "/images/2.png",
+       bgcolor: "#F2FCE4",
+       products: [
+         {
+           title: "Strawberry Shake",
+           image: "/images/1.png",
+           price: 180,
+         },
+         {
+           title: "Strawberry Ice Cream",
+           image: "/images/2.png",
+           price: 150,
+         },
+         {
+           title: "Strawberry Shake",
+           image: "/images/1.png",
+           price: 180,
+         },
+         {
+           title: "Strawberry Ice Cream",
+           image: "/images/2.png",
+           price: 150,
+         },
+       ],
+     },
+   ];
 
   return (
     <div className="h-[170px]">

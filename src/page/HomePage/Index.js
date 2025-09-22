@@ -3,6 +3,7 @@ import HeroSection from './HeroSection'
 import FeaturedCate from './FeaturedCate'
 import PopularProduct from './PopularProduct'
 import DealsDay from './DealsDay'
+import ProductCategorySection from './ProductCategorySection'
 
 export default function Index() {
   return (
@@ -11,6 +12,7 @@ export default function Index() {
       <FeaturedCate />
       <PopularProduct />
       <DealsDay />
+      <ProductCategorySection />
     </div>
   )
 }
