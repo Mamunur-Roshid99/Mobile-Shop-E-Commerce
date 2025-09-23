@@ -1,3 +1,4 @@
+import Footer from "@/layout/Footer";
 import Navbar from "@/layout/Navbar";
 import NavLink from "@/layout/NavLink";
 import TopNavbar from "@/layout/TopNavbar";
@@ -11,6 +12,7 @@ export default function Home() {
     <Navbar />
     <NavLink />
     <Index />
+    <Footer />
     </>
   );
 }
