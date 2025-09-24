@@ -1,9 +1,14 @@
 import React from 'react'
+import HeroSection from './HeroSection'
+import TopNav from './TopNav'
+import Provide from './Provide'
 
 export default function Index() {
   return (
     <div>
-      fdsfasdfads
+      <TopNav />
+      <HeroSection />
+      <Provide />
     </div>
   )
 }
