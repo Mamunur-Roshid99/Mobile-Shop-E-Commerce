@@ -3,6 +3,8 @@
 import React, { useState, useEffect } from "react";
 import { FaStar } from "react-icons/fa";
 import { IoCartOutline } from "react-icons/io5";
+import { FaArrowRight } from "react-icons/fa6";
+import Link from "next/link";
 
 const links = [
   { label: "All" },
@@ -15,6 +17,154 @@ const links = [
 
 // sample products (dummy)
 const products = [
+  {
+    id: 1,
+    title: "Foster Farms Takeout Crispy Classic",
+    category: "Baking material",
+    image: "/images/chips.png",
+    rating: 4,
+    sold: 5,
+    price: "$21.00",
+    discountPrice: "$24.00",
+    provider: "Hambger Hel",
+    discountPercent: "8%",
+  },
+  {
+    id: 2,
+    title: "Foster Farms Takeout Crispy Classic",
+    category: "Fresh Fruits",
+    image: "/images/product1.png",
+    rating: 4,
+    sold: 5,
+    price: "$21.00",
+    discountPrice: "$24.00",
+    provider: "Hambger Hel",
+    discountPercent: "8%",
+  },
+  {
+    id: 3,
+    title: "Foster Farms Takeout Crispy Classic",
+    category: "Milks & Dairies",
+    image: "/images/product2.png",
+    rating: 4,
+    sold: 5,
+    price: "$21.00",
+    discountPrice: "$24.00",
+    provider: "Hambger Hel",
+    badge: "Hot",
+  },
+  {
+    id: 4,
+    title: "Foster Farms Takeout Crispy Classic",
+    category: "Meats",
+    image: "/images/product3.png",
+    rating: 4,
+    sold: 5,
+    price: "$21.00",
+    discountPrice: "$24.00",
+    provider: "Hambger Hel",
+    discountPercent: "8%",
+    badge: "New",
+  },
+  {
+    id: 5,
+    title: "Foster Farms Takeout Crispy Classic",
+    category: "Vegetables",
+    image: "/images/product4.png",
+    rating: 4,
+    sold: 5,
+    price: "$21.00",
+    discountPrice: "$24.00",
+    provider: "Hambger Hel",
+    badge: "Hot",
+  },
+  {
+    id: 6,
+    title: "Foster Farms Takeout Crispy Classic",
+    category: "Baking material",
+    image: "/images/product1.png",
+    rating: 3,
+    sold: 5,
+    price: "$21.00",
+    discountPrice: "$24.00",
+    provider: "Hambger Hel",
+    discountPercent: "8%",
+    badge: "Hot",
+  },
+  {
+    id: 1,
+    title: "Foster Farms Takeout Crispy Classic",
+    category: "Baking material",
+    image: "/images/chips.png",
+    rating: 4,
+    sold: 5,
+    price: "$21.00",
+    discountPrice: "$24.00",
+    provider: "Hambger Hel",
+    discountPercent: "8%",
+  },
+  {
+    id: 2,
+    title: "Foster Farms Takeout Crispy Classic",
+    category: "Fresh Fruits",
+    image: "/images/product1.png",
+    rating: 4,
+    sold: 5,
+    price: "$21.00",
+    discountPrice: "$24.00",
+    provider: "Hambger Hel",
+    discountPercent: "8%",
+  },
+  {
+    id: 3,
+    title: "Foster Farms Takeout Crispy Classic",
+    category: "Milks & Dairies",
+    image: "/images/product2.png",
+    rating: 4,
+    sold: 5,
+    price: "$21.00",
+    discountPrice: "$24.00",
+    provider: "Hambger Hel",
+    badge: "Hot",
+  },
+  {
+    id: 4,
+    title: "Foster Farms Takeout Crispy Classic",
+    category: "Meats",
+    image: "/images/product3.png",
+    rating: 4,
+    sold: 5,
+    price: "$21.00",
+    discountPrice: "$24.00",
+    provider: "Hambger Hel",
+    discountPercent: "8%",
+    badge: "New",
+  },
+  {
+    id: 5,
+    title: "Foster Farms Takeout Crispy Classic",
+    category: "Vegetables",
+    image: "/images/product4.png",
+    rating: 4,
+    sold: 5,
+    price: "$21.00",
+    discountPrice: "$24.00",
+    provider: "Hambger Hel",
+    badge: "Hot",
+  },
+  {
+    id: 6,
+    title: "Foster Farms Takeout Crispy Classic",
+    category: "Baking material",
+    image: "/images/product1.png",
+    rating: 3,
+    sold: 5,
+    price: "$21.00",
+    discountPrice: "$24.00",
+    provider: "Hambger Hel",
+    discountPercent: "8%",
+    badge: "Hot",
+  },
   {
     id: 1,
     title: "Foster Farms Takeout Crispy Classic",
@@ -190,9 +340,9 @@ const PopularProduct = () => {
                   className="bg-gray-200 animate-pulse h-44 rounded-md"
                 ></div>
               ))
-            : filteredProducts.map((product) => (
+            : filteredProducts.slice(0, 8).map((product, index) => (
                 <div
-                  key={product.id}
+                  key={`${product.id}-${index}`}
                   className="bg-white rounded-xl p-2 border border-gray-200 flex flex-col gap-1 cursor-pointer hover:shadow-lg duration-300 lg:p-4 relative"
                 >
                   {/* img */}
@@ -281,6 +431,16 @@ const PopularProduct = () => {
                   </>
                 </div>
               ))}
+        </div>
+        {/* button */}
+        <div className="flex items-center justify-center mt-7">
+          <Link
+            href="/allproduct"
+            className="bg-[#3BB77E] text-white flex items-center justify-between gap-2 w-44 text-sm p-2 rounded-sm font-medium cursor-pointer"
+          >
+            <span>View All Products</span>
+            <FaArrowRight />
+          </Link>
         </div>
       </div>
     </div>

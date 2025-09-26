@@ -1,7 +1,9 @@
+import React from 'react'
 import Navbar from '@/layout/Navbar'
 import NavLink from '@/layout/NavLink'
 import TopNavbar from '@/layout/TopNavbar'
-import React from 'react'
+import Index from '@/page/AllProduct/Index'
+import Footer from '@/layout/Footer'
 
 export default function page() {
   return (
@@ -9,7 +11,8 @@ export default function page() {
       <TopNavbar />
       <Navbar />
       <NavLink />
-      dfas
+      <Index />
+      <Footer />
     </div>
   )
 }
