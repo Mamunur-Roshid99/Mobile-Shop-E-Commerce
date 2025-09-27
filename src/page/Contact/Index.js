@@ -1,8 +1,15 @@
-import React from 'react'
-import HeroSection from './HeroSection'
-import Map from './Map'
-import Location from './Location'
-import Form from './Form'
+"use client";
+
+import React from "react";
+import HeroSection from "./HeroSection";
+import Location from "./Location";
+import Form from "./Form";
+import dynamic from "next/dynamic";
+
+// শুধু dynamic import রাখো
+const Map = dynamic(() => import("./Map"), {
+  ssr: false,
+});
 
 export default function Index() {
   return (
@@ -12,5 +19,5 @@ export default function Index() {
       <Location />
       <Form />
     </div>
-  )
+  );
 }
