@@ -8,6 +8,7 @@ import CartBadge from "@/components/CartBadge";
 import CategoryDropdown from "@/components/CategoryDropdown";
 import { IoSearchOutline } from "react-icons/io5";
 import { VscAccount } from "react-icons/vsc";
+import CartDrawer from "@/components/CartDrawer";
 
 const Navbar = () => {
   const [cartCount, setCartCount] = useState(3);
@@ -40,7 +41,7 @@ const Navbar = () => {
               count={wishlistCount}
               onClick={handleWishlistClick}
             />
-            <CartBadge count={cartCount} onClick={handleCartClick} />
+            <CartDrawer />
             <div>
               <VscAccount className="text-[#253D4E] text-2xl" />
             </div>
@@ -86,7 +87,7 @@ const Navbar = () => {
               <p className="text-sm text-[#7E7E7E]">Wishlist</p>
             </div>
             <div className="flex items-end">
-              <CartBadge count={cartCount} onClick={handleCartClick} />
+              <CartDrawer />
               <p className="text-sm text-[#7E7E7E]">Cart</p>
             </div>
             <div className="flex items-end gap-1">
