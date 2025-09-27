@@ -1,9 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Box, Drawer } from "@mui/material";
-import { IoIosMenu } from "react-icons/io";
-import { RxCross2 } from "react-icons/rx";
+import { Drawer } from "@mui/material";
 import Link from "next/link";
 import { IoCloseSharp } from "react-icons/io5";
 import { FaArrowRight } from "react-icons/fa6";

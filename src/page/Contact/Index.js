@@ -7,7 +7,7 @@ import Form from "./Form";
 import dynamic from "next/dynamic";
 
 // শুধু dynamic import রাখো
-const Map = dynamic(() => import("./Map"), {
+const Map = dynamic(() => import("@/components/Map"), {
   ssr: false,
 });
 
