@@ -1,16 +1,16 @@
 import React from 'react'
-import TopNav from './TopNav'
 import ProductSec from './ProductSec'
 import DealsDay from '../HomePage/DealsDay'
 import CTASection from '../HomePage/CTASection'
+import PageBreadcrumb from "@/components/PageBreadcrumb"
 
 export default function Index() {
   return (
     <div>
-      <TopNav />
+      <PageBreadcrumb pageName="All Products" pageLink="/allproduct" />
       <ProductSec />
       <DealsDay />
       <CTASection />
     </div>
-  )
+  );
 }

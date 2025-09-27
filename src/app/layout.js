@@ -1,5 +1,6 @@
 import { Quicksand } from "next/font/google";
 import "./globals.css";
+import "leaflet/dist/leaflet.css";
 
 const quicksand = Quicksand({
   subsets: ["latin"],
