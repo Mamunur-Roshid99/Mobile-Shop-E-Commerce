@@ -70,7 +70,7 @@ const list = () => (
               className="flex p-3 space-x-4 border border-[#ECECEC] rounded-lg shadow-sm"
             >
               <img
-                src={course.imageUrl}
+                src={course.image}
                 alt={course.title}
                 className="object-cover w-16 h-16 rounded-lg"
               />
