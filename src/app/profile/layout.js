@@ -17,7 +17,7 @@ export default function ProfileLayout({ children }) {
           <ProfileSidebar />
 
           {/* Right Content */}
-          <main className="flex-1 w-full">
+          <main className="flex-1 w-full md:w-[70%]">
             {children}
           </main>
         </div>

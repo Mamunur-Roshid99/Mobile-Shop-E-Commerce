@@ -7,7 +7,7 @@ import Link from "next/link";
 const ProfileSidebar = () => {
         const pathname = usePathname();
   return (
-    <aside className="w-full md:w-52 rounded-lg shadow-xs border border-[#ECECEC] p-4 lg:w-68">
+    <aside className="w-full md:w-[30%] rounded-lg shadow-xs border border-[#ECECEC] p-4 lg:w-[25%]">
       <h2 className="text-[#253D4E] font-bold text-xl lg:text-2xl">
         Hello, Mamunur Roshid
       </h2>

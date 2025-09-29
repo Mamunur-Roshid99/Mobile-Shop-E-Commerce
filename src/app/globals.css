@@ -40,3 +40,47 @@ body {
   width: 24px;
   border: 0;
 }
+
+/* custom scrollbar */
+.overflow-x-auto::-webkit-scrollbar {
+  height: 3px;
+  /* horizontal scrollbar এর height */
+}
+
+.overflow-x-auto::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.overflow-x-auto::-webkit-scrollbar-thumb {
+  background: #3BB77E;
+  border-radius: 10px;
+}
+
+.overflow-x-auto::-webkit-scrollbar-thumb:hover {
+  background: #2a8c5a;
+}
+
+/* Scrollbar design */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  /* scrollbar background */
+  border-radius: 9999px;
+  /* fully rounded */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3BB77E;
+  /* green color */
+  border-radius: 9999px;
+  /* rounded scrollbar */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #36a470;
+  /* hover color */
+}
