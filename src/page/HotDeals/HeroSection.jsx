@@ -42,21 +42,15 @@ const hotDeals = [
   },
 ];
 
-const DealsDay = () => {
+const HeroSection = () => {
   return (
     <div className="pb-12">
       <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-14">
         {/*  */}
-        <div>
-          <h1 className="text-[#253D4E] font-bold text-xl lg:text-3xl">
-            Deals Of The Day
-          </h1>
-        </div>
-        {/*  */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-8 lg:gap-8">
           {hotDeals.map((item) => (
             <div key={item.id} className="h-[400px] relative lg:h-[420px]">
-              <div className="w-full h-[300px] lg:h-[350px] rounded-sm border border-[#ECECEC]">
+              <div className="w-full h-[300px] lg:h-[350px] border border-[#ECECEC]">
                 {/* img */}
                 <img
                   src={item.image}
@@ -107,4 +101,4 @@ const DealsDay = () => {
   );
 };
 
-export default DealsDay;
+export default HeroSection;

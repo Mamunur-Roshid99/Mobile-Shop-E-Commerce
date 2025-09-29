@@ -215,28 +215,28 @@ const FeaturedCate = () => {
           {/* Tabs */}
           <div className="grid grid-cols-3 gap-2 md:grid-cols-6 lg:grid-cols-9 lg:gap-5">
             <button
-              onClick={() => handleTabClick("cakemilk")}
+              onClick={() => handleTabClick("samsung")}
               className="text-[#253D4E] font-medium text-sm hover:text-[#3BB77E] text-left cursor-pointer"
             >
-              Cake & Milk
+              Samsung
             </button>
             <button
-              onClick={() => handleTabClick("coffetea")}
+              onClick={() => handleTabClick("xiaomi")}
               className="text-[#253D4E] font-medium text-sm hover:text-[#3BB77E] text-left cursor-pointer"
             >
-              Coffees & Teas
+              Xiaomi
             </button>
             <button
-              onClick={() => handleTabClick("petfoods")}
+              onClick={() => handleTabClick("realme")}
               className="text-[#253D4E] font-medium text-sm hover:text-[#3BB77E] text-left cursor-pointer"
             >
-              Pet Foods
+              Realme
             </button>
             <button
-              onClick={() => handleTabClick("vegetables")}
+              onClick={() => handleTabClick("iphone")}
               className="text-[#253D4E] font-medium text-sm hover:text-[#3BB77E] text-left cursor-pointer"
             >
-              Vegetables
+              iPhone
             </button>
           </div>
         </div>
@@ -254,16 +254,16 @@ const FeaturedCate = () => {
             </div>
           ) : (
             <>
-              {activeTab === "cakemilk" && (
+              {activeTab === "samsung" && (
                 <CakeMilkContent onCategoryClick={handleCategoryClick} />
               )}
-              {activeTab === "coffetea" && (
+              {activeTab === "xiaomi" && (
                 <CoffeeTeaContent onCategoryClick={handleCategoryClick} />
               )}
-              {activeTab === "petfoods" && (
+              {activeTab === "realme" && (
                 <PetFoodsContent onCategoryClick={handleCategoryClick} />
               )}
-              {activeTab === "vegetables" && (
+              {activeTab === "iphone" && (
                 <VegetablesContent onCategoryClick={handleCategoryClick} />
               )}
             </>

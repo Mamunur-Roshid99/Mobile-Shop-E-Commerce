@@ -7,171 +7,88 @@ import "swiper/css";
 import "swiper/css/navigation";
 
 const CakeMilkContent = ({ onCategoryClick }) => {
-  const categories = [
-    {
-      title: "Chocolate Cake",
-      image: "/images/1.png",
-      bgcolor: "#FFFCEB",
-      products: [
-        {
-          title: "Choco Slice",
-          image: "/images/1.png",
-          price: 250,
-        },
-        {
-          title: "Choco Roll",
-          image: "/images/2.png",
-          price: 300,
-        },
-      ],
-    },
-    {
-      title: "Vanilla Cake",
-      image: "/images/2.png",
-      bgcolor: "#F2FCE4",
-      products: [
-        {
-          title: "Vanilla Slice",
-          image: "/images/1.png",
-          price: 200,
-        },
-        {
-          title: "Vanilla Roll",
-          image: "/images/2.png",
-          price: 220,
-        },
-      ],
-    },
-    {
-      title: "Strawberry Milkshake",
-      image: "/images/1.png",
-      bgcolor: "#ECFFEC",
-      products: [
-        {
-          title: "Strawberry Shake",
-          image: "/images/3.png",
-          price: 180,
-        },
-        {
-          title: "Strawberry Ice Cream",
-          image: "/images/2.png",
-          price: 150,
-        },
-      ],
-    },
-    {
-      title: "Chocolate Cake",
-      image: "/images/1.png",
-      bgcolor: "#FEEFEA",
-      products: [
-        {
-          title: "Choco Slice",
-          image: "/images/4.png",
-          price: 250,
-        },
-        {
-          title: "Choco Roll",
-          image: "/images/2.png",
-          price: 300,
-        },
-      ],
-    },
-    {
-      title: "Vanilla Cake",
-      image: "/images/5.png",
-      bgcolor: "#FFF3EB",
-      products: [
-        {
-          title: "Vanilla Slice",
-          image: "/images/1.png",
-          price: 200,
-        },
-        {
-          title: "Vanilla Roll",
-          image: "/images/2.png",
-          price: 220,
-        },
-      ],
-    },
-    {
-      title: "Strawberry Milkshake",
-      image: "/images/7.png",
-      bgcolor: "#FFF3FF",
-      products: [
-        {
-          title: "Strawberry Shake",
-          image: "/images/1.png",
-          price: 180,
-        },
-        {
-          title: "Strawberry Ice Cream",
-          image: "/images/2.png",
-          price: 150,
-        },
-      ],
-    },
-    {
-      title: "Chocolate Cake",
-      image: "/images/8.png",
-      bgcolor: "#F2FCE4",
-      products: [
-        {
-          title: "Choco Slice",
-          image: "/images/1.png",
-          price: 250,
-        },
-        {
-          title: "Choco Roll",
-          image: "/images/2.png",
-          price: 300,
-        },
-      ],
-    },
-    {
-      title: "Vanilla Cake",
-      image: "/images/1.png",
-      bgcolor: "#FEEFEA",
-      products: [
-        {
-          title: "Vanilla Slice",
-          image: "/images/1.png",
-          price: 200,
-        },
-        {
-          title: "Vanilla Roll",
-          image: "/images/2.png",
-          price: 220,
-        },
-      ],
-    },
-    {
-      title: "Strawberry Milkshake",
-      image: "/images/2.png",
-      bgcolor: "#F2FCE4",
-      products: [
-        {
-          title: "Strawberry Shake",
-          image: "/images/1.png",
-          price: 180,
-        },
-        {
-          title: "Strawberry Ice Cream",
-          image: "/images/2.png",
-          price: 150,
-        },
-        {
-          title: "Strawberry Shake",
-          image: "/images/1.png",
-          price: 180,
-        },
-        {
-          title: "Strawberry Ice Cream",
-          image: "/images/2.png",
-          price: 150,
-        },
-      ],
-    },
-  ];
+const categories = [
+  {
+    title: "Samsung Galaxy S Series",
+    image:
+      "https://i.pinimg.com/736x/2f/3c/74/2f3c74388d084283ba63282bd8e00e3c.jpg",
+    bgcolor: "#FFFCEB",
+    products: [
+      {
+        image:
+          "https://i.pinimg.com/736x/2f/3c/74/2f3c74388d084283ba63282bd8e00e3c.jpg",
+        image: "/images/s23.png",
+        price: 950,
+      },
+      {
+        image:
+          "https://i.pinimg.com/736x/2f/3c/74/2f3c74388d084283ba63282bd8e00e3c.jpg",
+        image: "/images/s22.png",
+        price: 800,
+      },
+    ],
+  },
+  {
+    title: "Samsung Galaxy A Series",
+    image:
+      "https://i.pinimg.com/736x/2f/3c/74/2f3c74388d084283ba63282bd8e00e3c.jpg",
+    bgcolor: "#F2FCE4",
+    products: [
+      {
+        title: "Samsung Galaxy A54",
+        image:
+          "https://i.pinimg.com/736x/2f/3c/74/2f3c74388d084283ba63282bd8e00e3c.jpg",
+        price: 450,
+      },
+      {
+        title: "Samsung Galaxy A34",
+        image:
+          "https://i.pinimg.com/736x/2f/3c/74/2f3c74388d084283ba63282bd8e00e3c.jpg",
+        price: 350,
+      },
+    ],
+  },
+  {
+    title: "Samsung Galaxy M Series",
+    image:
+      "https://i.pinimg.com/736x/2f/3c/74/2f3c74388d084283ba63282bd8e00e3c.jpg",
+    bgcolor: "#ECFFEC",
+    products: [
+      {
+        title: "Samsung Galaxy M14",
+        image:
+          "https://i.pinimg.com/736x/2f/3c/74/2f3c74388d084283ba63282bd8e00e3c.jpg",
+        price: 220,
+      },
+      {
+        title: "Samsung Galaxy M34",
+        image:
+          "https://i.pinimg.com/736x/2f/3c/74/2f3c74388d084283ba63282bd8e00e3c.jpg",
+        price: 300,
+      },
+    ],
+  },
+  {
+    title: "Samsung Galaxy Z Series",
+    image:
+      "https://i.pinimg.com/736x/2f/3c/74/2f3c74388d084283ba63282bd8e00e3c.jpg",
+    bgcolor: "#FEEFEA",
+    products: [
+      {
+        title: "Samsung Galaxy Z Flip 5",
+        image:
+          "https://i.pinimg.com/736x/2f/3c/74/2f3c74388d084283ba63282bd8e00e3c.jpg",
+        price: 1200,
+      },
+      {
+        title: "Samsung Galaxy Z Fold 5",
+    image:
+      "https://i.pinimg.com/736x/2f/3c/74/2f3c74388d084283ba63282bd8e00e3c.jpg",
+        price: 1600,
+      },
+    ],
+  },
+];
 
   return (
     <div className="h-[170px]">

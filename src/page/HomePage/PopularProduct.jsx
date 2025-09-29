@@ -5,6 +5,9 @@ import { FaStar } from "react-icons/fa";
 import { IoCartOutline } from "react-icons/io5";
 import { FaArrowRight } from "react-icons/fa6";
 import Link from "next/link";
+import { useDispatch } from "react-redux";
+import { useRouter } from "next/navigation";
+import { setSelectedProduct } from "@/store/productSlice";
 
 const links = [
   { label: "All" },
@@ -22,6 +25,9 @@ const products = [
     title: "Foster Farms Takeout Crispy Classic",
     category: "Baking material",
     image: "/images/chips.png",
+    subimage1: "/images/1.png",
+    subimage2: "/images/2.png",
+    subimage3: "/images/3.png",
     rating: 4,
     sold: 5,
     price: "$21.00",
@@ -31,9 +37,12 @@ const products = [
   },
   {
     id: 2,
-    title: "Foster Farms Takeout Crispy Classic",
+    title: "Foster Farms Takeo",
     category: "Fresh Fruits",
     image: "/images/product1.png",
+    subimage1: "/images/1.png",
+    subimage2: "/images/2.png",
+    subimage3: "/images/3.png",
     rating: 4,
     sold: 5,
     price: "$21.00",
@@ -246,6 +255,9 @@ const PopularProduct = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [loading, setLoading] = useState(true);
   const [filteredProducts, setFilteredProducts] = useState(products);
+  const dispatch = useDispatch();
+  const router = useRouter();
+
 
   // simulate loading when category changes
   useEffect(() => {
@@ -397,7 +409,13 @@ const PopularProduct = () => {
                         </del>
                       </div>
                       {/*  */}
-                      <div className="flex gap-2 bg-[#DEF9EC] items-center justify-center rounded-sm py-2 text-[#3BB77E] font-bold cursor-pointer lg:px-3 hover:bg-[#3BB77E] hover:text-white duration-500">
+                      <div
+                        onClick={() => {
+                          dispatch(setSelectedProduct(product)); // product পাঠানো
+                          router.push(`/product/${product.id}`);
+                        }}
+                        className="flex gap-2 bg-[#DEF9EC] items-center justify-center rounded-sm py-2 text-[#3BB77E] font-bold cursor-pointer lg:px-3 hover:bg-[#3BB77E] hover:text-white duration-500"
+                      >
                         <div className="flex items-center justify-center">
                           <IoCartOutline />
                         </div>
