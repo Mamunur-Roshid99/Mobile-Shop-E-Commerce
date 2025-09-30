@@ -68,15 +68,15 @@ const HeroSection = () => {
           </div>
           <div className="custom-pagination flex gap-2 absolute inset-x-0 bottom-4 z-50 items-center justify-center"></div>
         </Swiper>
-        <div className="lg:w-[30%] flex flex-col gap-5 md:flex-row  md:items-start md:justify-between lg:flex-col lg:h-[500px]">
-          <div className="rounded-2xl w-full h-48 lg:h-58">
+        <div className="lg:w-[30%] flex gap-5 flex-row items-start justify-between lg:flex-col lg:h-[500px]">
+          <div className="rounded-2xl w-full h-40 lg:h-58">
             <img
               src="https://i.pinimg.com/736x/64/33/ef/6433ef22ce1325a1cb6190f77722998d.jpg"
               alt=""
               className="rounded-2xl h-full w-full"
             />
           </div>
-          <div className="rounded-2xl w-full h-48 lg:h-58">
+          <div className="rounded-2xl w-full h-40 lg:h-58">
             <img
               src="https://i.pinimg.com/1200x/ec/8a/73/ec8a73ef6d05181ecb4ff4468529e76e.jpg"
               alt=""

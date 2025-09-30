@@ -14,8 +14,12 @@ const Footer = () => {
         <div className="flex flex-col gap-5 lg:flex-row lg:items-start lg:justify-between border-b border-b-[#BCE3C9] pb-5">
           {/* info */}
           <div className="lg:w-72">
-            <div className="w-40 mb-4">
-              <img src="/images/Nest.jpg" alt="" className="w-full" />
+            <div className="w-22 h-12">
+              <img
+                src="https://i.pinimg.com/1200x/de/49/20/de4920079c458a717be1c62acd4d2159.jpg"
+                alt="logo"
+                className="w-full h-full object-center "
+              />
             </div>
             <p className="text-[#253D4E] font-bold mb-4">
               Awesome grocery store website template

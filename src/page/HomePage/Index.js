@@ -2,17 +2,17 @@
 
 import React from 'react'
 import HeroSection from './HeroSection'
-import FeaturedCate from './FeaturedCate'
 import PopularProduct from './PopularProduct'
 import DealsDay from './DealsDay'
 import ProductCategorySection from './ProductCategorySection'
 import CTASection from './CTASection'
+import CategorySection from './CategorySection'
 
 export default function Index() {
   return (
     <div>
       <HeroSection />
-      <FeaturedCate />
+      <CategorySection />
       <PopularProduct />
       <DealsDay />
       <ProductCategorySection />

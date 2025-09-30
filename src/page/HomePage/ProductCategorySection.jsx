@@ -4,33 +4,43 @@ import { FaStar } from "react-icons/fa";
 const topSelling = [
   {
     id: 1,
-    title: "Organic Cage Grade A Large Eggs",
-    image: "/images/5.png",
-    provider: "Hambger Hel",
-    price: "$21.00",
-    discountPrice: "$24.00",
+    title: "Samsung Galaxy S24 Ultra",
+    image:
+      "https://i.pinimg.com/736x/aa/ff/a3/aaffa3f6b3eccfd7d80f9f4b8823b5b4.jpg",
     rating: 4,
     sold: 5,
+    price: "$21.00",
+    discountPrice: "$24.00",
+    provider: "Hambger Hel",
+    discountPercent: "8%",
+    badge: "Hot",
+    category: "samsung",
   },
   {
     id: 2,
-    title: "Organic Cage Grade A Large Eggs",
-    image: "/images/8.png",
-    provider: "Hambger Hel",
-    price: "$21.00",
-    discountPrice: "$24.00",
+    title: "iPhone 15 Pro",
+    image:
+      "https://i.pinimg.com/736x/8e/1c/37/8e1c3744a4f11b8a6d5d053c59e9a75c.jpg",
     rating: 4,
     sold: 5,
+    price: "$21.00",
+    discountPrice: "$24.00",
+    provider: "Hambger Hel",
+    discountPercent: "8%",
+    category: "iPhone",
   },
   {
     id: 3,
-    title: "Organic Cage Grade A Large Eggs",
-    image: "/images/1.png",
-    provider: "Hambger Hel",
-    price: "$21.00",
-    discountPrice: "$24.00",
+    title: "Vivo X100 Pro",
+    image:
+      "https://i.pinimg.com/736x/6b/fc/95/6bfc95a7c6e34a375c072d2428a5d769.jpg",
     rating: 4,
     sold: 5,
+    price: "$21.00",
+    discountPrice: "$24.00",
+    provider: "Hambger Hel",
+    discountPercent: "8%",
+    category: "vivo",
   },
 ];
 
@@ -45,17 +55,22 @@ const ProductCategorySection = () => {
           </h1>
           <div className="flex flex-col gap-7 mt-5">
             {topSelling.map((product) => (
-              <div key={product.id} className="flex items-start gap-5">
+              <div
+                key={product.id}
+                className="flex items-start gap-5"
+              >
                 {/* img */}
-                <div className="w-28 lg:w-36">
-                  <img
-                    src={product.image}
-                    alt={product.title}
-                    className="w-full"
-                  />
+                <div className="w-[30%]">
+                  <div className="w-full h-32 flex items-center justify-center px-3">
+                    <img
+                      src={product.image}
+                      alt={product.title}
+                      className="max-h-full object-contain bg-green-700"
+                    />
+                  </div>
                 </div>
                 {/* details */}
-                <div>
+                <div className="lg:w-[70%]">
                   <h1 className="text-[#253D4E] font-bold mb-2 lg:text-lg lg:leading-5">
                     {product.title}
                   </h1>
@@ -98,17 +113,22 @@ const ProductCategorySection = () => {
           </h1>
           <div className="flex flex-col gap-7 mt-5">
             {topSelling.map((product) => (
-              <div key={product.id} className="flex items-start gap-5">
+              <div
+                key={product.id}
+                className="flex items-start gap-5"
+              >
                 {/* img */}
-                <div className="w-28 lg:w-36">
-                  <img
-                    src={product.image}
-                    alt={product.title}
-                    className="w-full"
-                  />
+                <div className="w-[30%]">
+                  <div className="w-full h-32 flex items-center justify-center px-3">
+                    <img
+                      src={product.image}
+                      alt={product.title}
+                      className="max-h-full object-contain bg-green-700"
+                    />
+                  </div>
                 </div>
                 {/* details */}
-                <div>
+                <div className="lg:w-[70%]">
                   <h1 className="text-[#253D4E] font-bold mb-2 lg:text-lg lg:leading-5">
                     {product.title}
                   </h1>
@@ -151,17 +171,22 @@ const ProductCategorySection = () => {
           </h1>
           <div className="flex flex-col gap-7 mt-5">
             {topSelling.map((product) => (
-              <div key={product.id} className="flex items-start gap-5">
+              <div
+                key={product.id}
+                className="flex items-start gap-5"
+              >
                 {/* img */}
-                <div className="w-28 lg:w-36">
-                  <img
-                    src={product.image}
-                    alt={product.title}
-                    className="w-full"
-                  />
+                <div className="w-[30%]">
+                  <div className="w-full h-32 flex items-center justify-center px-3">
+                    <img
+                      src={product.image}
+                      alt={product.title}
+                      className="max-h-full object-contain bg-green-700"
+                    />
+                  </div>
                 </div>
                 {/* details */}
-                <div>
+                <div className="lg:w-[70%]">
                   <h1 className="text-[#253D4E] font-bold mb-2 lg:text-lg lg:leading-5">
                     {product.title}
                   </h1>

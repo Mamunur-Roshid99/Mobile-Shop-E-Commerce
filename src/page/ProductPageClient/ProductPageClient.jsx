@@ -1,8 +1,6 @@
-// app/product/[id]/ProductPageClient.jsx
-"use client"; // ✅ Client Component
+"use client";
 
 import { useSelector } from "react-redux";
-import TopNav from "./TopNav";
 
 export default function ProductPageClient() {
   const product = useSelector((state) => state.product.selectedProduct);

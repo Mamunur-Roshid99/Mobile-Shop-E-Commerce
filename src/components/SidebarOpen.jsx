@@ -51,8 +51,12 @@ export default function SidebarOpen() {
         {/* logo */}
         <div className="flex items-center justify-between">
           {/* logo */}
-          <div>
-            <Image src="/images/Nest.jpg" width={110} height={110} alt="logo" />
+          <div className="w-22 h-12">
+            <img
+              src="https://i.pinimg.com/1200x/de/49/20/de4920079c458a717be1c62acd4d2159.jpg"
+              alt="logo"
+              className="w-full h-full object-center "
+            />
           </div>
           {/* Close button */}
           <button onClick={() => setOpen(false)} className="text-2xl">
