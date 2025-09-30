@@ -56,7 +56,7 @@ const DealsDay = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-8 lg:gap-8">
           {hotDeals.map((item) => (
             <div key={item.id} className="h-[400px] relative lg:h-[420px]">
-              <div className="w-full h-[300px] lg:h-[350px] rounded-sm border border-[#ECECEC] rounded-sm">
+              <div className="w-full h-[300px] lg:h-[350px] border border-[#ECECEC] rounded-sm">
                 {/* img */}
                 <img
                   src={item.image}
