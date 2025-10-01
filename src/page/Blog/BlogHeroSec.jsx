@@ -2,66 +2,75 @@
 
 import React, { useState, useEffect } from "react";
 import { FaStar } from "react-icons/fa";
-import { IoCartOutline } from "react-icons/io5";
-
-const links = [
-  { label: "All" },
-  { label: "Baking material" },
-  { label: "Fresh Fruits" },
-  { label: "Milks & Dairies" },
-  { label: "Meats" },
-  { label: "Vegetables" },
-];
 
 // sample products (dummy)
 const products = [
   {
-    title: "The Intermediate Guide to Healthy Food",
-    subtitle: "Side Dish",
+    title: "Top 10 Budget Smartphones in 2025",
+    subtitle: "Mobile Reviews",
     image: "/images/blog1.png",
+    date: "25 April 2025",
+    views: "120k Views",
+    read: "6 mins read",
   },
   {
-    title: "The Intermediate Guide to Healthy Food",
-    subtitle: "Side Dish",
-    image: "/images/blog1.png",
+    title: "How to Choose the Right 5G Phone",
+    subtitle: "Buying Guide",
+    image: "/images/blog2.png",
+    date: "28 April 2025",
+    views: "95k Views",
+    read: "4 mins read",
   },
   {
-    title: "The Intermediate Guide to Healthy Food",
-    subtitle: "Side Dish",
-    image: "/images/blog1.png",
+    title: "Upcoming Flagship Phones in 2025",
+    subtitle: "Latest News",
+    image: "/images/blog3.png",
+    date: "30 April 2025",
+    views: "135k Views",
+    read: "5 mins read",
   },
 ];
 
 const topSelling = [
   {
     id: 1,
-    title: "Organic Cage Grade A Large Eggs",
-    image: "/images/5.png",
-    provider: "Hambger Hel",
-    price: "$21.00",
-    discountPrice: "$24.00",
+    title: "Samsung Galaxy S24 Ultra",
+    image:
+      "https://i.pinimg.com/736x/aa/ff/a3/aaffa3f6b3eccfd7d80f9f4b8823b5b4.jpg",
     rating: 4,
     sold: 5,
+    price: "$21.00",
+    discountPrice: "$24.00",
+    provider: "Hambger Hel",
+    discountPercent: "8%",
+    badge: "Hot",
+    category: "samsung",
   },
   {
     id: 2,
-    title: "Organic Cage Grade A Large Eggs",
-    image: "/images/8.png",
-    provider: "Hambger Hel",
-    price: "$21.00",
-    discountPrice: "$24.00",
+    title: "iPhone 15 Pro",
+    image:
+      "https://i.pinimg.com/1200x/4c/00/ae/4c00aee364b4a39de16d3596eb7dc11c.jpg",
     rating: 4,
     sold: 5,
+    price: "$21.00",
+    discountPrice: "$24.00",
+    provider: "Hambger Hel",
+    discountPercent: "8%",
+    category: "iPhone",
   },
   {
     id: 3,
-    title: "Organic Cage Grade A Large Eggs",
-    image: "/images/1.png",
-    provider: "Hambger Hel",
-    price: "$21.00",
-    discountPrice: "$24.00",
+    title: "Vivo X100 Pro",
+    image:
+      "https://i.pinimg.com/736x/c4/0a/73/c40a734a88b6f8a36a1176197a63509e.jpg",
     rating: 4,
     sold: 5,
+    price: "$21.00",
+    discountPrice: "$24.00",
+    provider: "Hambger Hel",
+    discountPercent: "8%",
+    category: "vivo",
   },
 ];
 
@@ -75,7 +84,7 @@ const BlogHeroSec = () => {
           <div className="flex items-center gap-2">
             <img src="/images/blogt.png" alt="" className="w-5 lg:w-8" />
             <h1 className="text-[#253D4E] font-bold text-xl lg:text-3xl">
-              Recips Articles
+              Mobile Articles
             </h1>
           </div>
 
@@ -83,11 +92,11 @@ const BlogHeroSec = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
             {products.map((product, index) => (
               <div key={index} className="">
-                <div className="w-full h-64 mb-3 lg:h-72">
+                <div className="w-full h-64 mb-3 lg:h-80 rounded-lg">
                   <img
                     src={product.image}
                     alt={product.title}
-                    className="h-full w-full"
+                    className="h-full w-full rounded-lg"
                   />
                 </div>
                 <p className="text-center text-[#B6B6B6] font-medium">
@@ -118,15 +127,17 @@ const BlogHeroSec = () => {
               {topSelling.map((product) => (
                 <div key={product.id} className="flex items-start gap-5">
                   {/* img */}
-                  <div className="w-28 lg:w-36">
-                    <img
-                      src={product.image}
-                      alt={product.title}
-                      className="w-full"
-                    />
+                  <div className="w-[30%]">
+                    <div className="w-full h-32 flex items-center justify-center px-3">
+                      <img
+                        src={product.image}
+                        alt={product.title}
+                        className="max-h-full object-contain bg-green-700"
+                      />
+                    </div>
                   </div>
                   {/* details */}
-                  <div>
+                  <div className="lg:w-[70%]">
                     <h1 className="text-[#253D4E] font-bold mb-2 lg:text-lg lg:leading-5">
                       {product.title}
                     </h1>
@@ -173,15 +184,17 @@ const BlogHeroSec = () => {
               {topSelling.map((product) => (
                 <div key={product.id} className="flex items-start gap-5">
                   {/* img */}
-                  <div className="w-28 lg:w-36">
-                    <img
-                      src={product.image}
-                      alt={product.title}
-                      className="w-full"
-                    />
+                  <div className="w-[30%]">
+                    <div className="w-full h-32 flex items-center justify-center px-3">
+                      <img
+                        src={product.image}
+                        alt={product.title}
+                        className="max-h-full object-contain bg-green-700"
+                      />
+                    </div>
                   </div>
                   {/* details */}
-                  <div>
+                  <div className="lg:w-[70%]">
                     <h1 className="text-[#253D4E] font-bold mb-2 lg:text-lg lg:leading-5">
                       {product.title}
                     </h1>
@@ -228,15 +241,17 @@ const BlogHeroSec = () => {
               {topSelling.map((product) => (
                 <div key={product.id} className="flex items-start gap-5">
                   {/* img */}
-                  <div className="w-28 lg:w-36">
-                    <img
-                      src={product.image}
-                      alt={product.title}
-                      className="w-full"
-                    />
+                  <div className="w-[30%]">
+                    <div className="w-full h-32 flex items-center justify-center px-3">
+                      <img
+                        src={product.image}
+                        alt={product.title}
+                        className="max-h-full object-contain bg-green-700"
+                      />
+                    </div>
                   </div>
                   {/* details */}
-                  <div>
+                  <div className="lg:w-[70%]">
                     <h1 className="text-[#253D4E] font-bold mb-2 lg:text-lg lg:leading-5">
                       {product.title}
                     </h1>

@@ -20,7 +20,7 @@ const topSelling = [
     id: 2,
     title: "iPhone 15 Pro",
     image:
-      "https://i.pinimg.com/736x/8e/1c/37/8e1c3744a4f11b8a6d5d053c59e9a75c.jpg",
+      "https://i.pinimg.com/1200x/4c/00/ae/4c00aee364b4a39de16d3596eb7dc11c.jpg",
     rating: 4,
     sold: 5,
     price: "$21.00",
@@ -33,7 +33,7 @@ const topSelling = [
     id: 3,
     title: "Vivo X100 Pro",
     image:
-      "https://i.pinimg.com/736x/6b/fc/95/6bfc95a7c6e34a375c072d2428a5d769.jpg",
+      "https://i.pinimg.com/736x/c4/0a/73/c40a734a88b6f8a36a1176197a63509e.jpg",
     rating: 4,
     sold: 5,
     price: "$21.00",

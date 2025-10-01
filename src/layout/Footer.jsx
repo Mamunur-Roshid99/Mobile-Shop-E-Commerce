@@ -22,7 +22,7 @@ const Footer = () => {
               />
             </div>
             <p className="text-[#253D4E] font-bold mb-4">
-              Awesome grocery store website template
+              Your trusted mobile & gadget store
             </p>
             <div className="flex items-start gap-2 font-medium text-[#253D4E] text-sm mb-2">
               <span>Address:</span>
@@ -36,7 +36,7 @@ const Footer = () => {
             </div>
             <div className="flex items-start gap-2 font-medium text-[#253D4E] text-sm mb-2">
               <span>Email:</span>
-              <p className="text-[#3BB77E]">sale@Nest.com</p>
+              <p className="text-[#3BB77E]">support@mobimart.com</p>
             </div>
             <div className="flex items-start gap-2 font-medium text-[#253D4E] text-sm mb-2">
               <span>Hours:</span>
@@ -86,13 +86,13 @@ const Footer = () => {
           <div className="flex flex-col gap-3">
             <h1 className="text-[#253D4E] font-bold text-xl">Popular</h1>
             <ul className="flex flex-col gap-2 text-[#253D4E] font-medium text-sm">
-              <li>Milk & Flavoured Milk</li>
-              <li>Butter and Margarine</li>
-              <li>Eggs Substitutes</li>
-              <li>Marmalades</li>
-              <li>Sour Cream and Dips</li>
-              <li>Tea & Kombucha</li>
-              <li>Cheese</li>
+              <li>Smartphones</li>
+              <li>Mobile Covers</li>
+              <li>Smartwatches</li>
+              <li>Earbuds & Headphones</li>
+              <li>Laptops</li>
+              <li>Chargers & Cables</li>
+              <li>Power Banks</li>
             </ul>
           </div>
           {/* install app */}
@@ -117,16 +117,15 @@ const Footer = () => {
         </div>
         {/* bottom */}
         <div className="pt-5 flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
-          <div className="text-[#7E7E7E] font-medium text-sm lg:text-base lg:w-96">
-            © 2023, Nest – WordPress Ecommerce Template. All rights reserved
+          <div className="text-[#7E7E7E] font-medium text-sm lg:w-96">
+            © 2025, MobiMart – Online Mobile & Accessories Store. All rights
+            reserved.
           </div>
           {/* contact */}
           <div className="flex items-center gap-2">
-            <FaPhone className="text-[#585858] text-3xl" />
+            <FaPhone className="text-[#585858] text-2xl" />
             <div className="flex flex-col">
-              <p className="text-[#3BB77E] font-semibold text-2xl">
-                1900 - 888
-              </p>
+              <p className="text-[#3BB77E] font-semibold text-xl">1900 - 888</p>
               <span className="text-[#7E7E7E] text-xs">
                 24/7 Support Center
               </span>
@@ -155,7 +154,7 @@ const Footer = () => {
               </div>
             </div>
             <div className="text-[#7E7E7E] font-medium text-sm">
-              Up to 15% discount on your first subscribe
+              Get exclusive deals & offers on your first order
             </div>
           </div>
         </div>

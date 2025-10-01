@@ -4,55 +4,55 @@ const provideData = [
   {
     image: "/images/provide1.png",
     title: "Best Prices & Offers",
-    desc: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form",
+    desc: "We bring you the most competitive prices and exclusive deals across all categories.",
   },
   {
     image: "/images/provide2.png",
-    title: "Best Prices & Offers",
-    desc: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form",
+    title: "Wide Product Variety",
+    desc: "From electronics to groceries, explore thousands of products in one place.",
   },
   {
     image: "/images/provide3.png",
-    title: "Best Prices & Offers",
-    desc: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form",
+    title: "Fast & Secure Delivery",
+    desc: "Get your orders delivered quickly with complete safety and reliability.",
   },
   {
     image: "/images/provide4.png",
-    title: "Best Prices & Offers",
-    desc: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form",
+    title: "Customer Support 24/7",
+    desc: "Our support team is always ready to assist you anytime, anywhere.",
   },
   {
     image: "/images/provide5.png",
-    title: "Best Prices & Offers",
-    desc: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form",
+    title: "Easy Return Policy",
+    desc: "Not satisfied? Enjoy hassle-free returns with our simple policy.",
   },
   {
     image: "/images/provide6.png",
-    title: "Best Prices & Offers",
-    desc: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form",
+    title: "Trusted by Thousands",
+    desc: "Over 10,000+ happy customers trust us for their daily needs.",
   },
 ];
 
 const companyData = [
   {
-    point: "0+",
-    name: "Glorious years",
+    point: "10+",
+    name: "Glorious Years",
   },
   {
-    point: "0+",
-    name: "Happy clients",
+    point: "8k+",
+    name: "Happy Clients",
   },
   {
-    point: "0+",
-    name: "Projects complete",
+    point: "12k+",
+    name: "Projects Completed",
   },
   {
-    point: "0+",
-    name: "Team advisor",
+    point: "50+",
+    name: "Team Advisors",
   },
   {
-    point: "0+",
-    name: "Products Sale",
+    point: "100k+",
+    name: "Products Sold",
   },
 ];
 
@@ -96,18 +96,26 @@ const Provide = () => {
         {/* bottom */}
         <div
           style={{
-            backgroundImage: "url('/images/Main.jpg')",
+            backgroundImage:
+              "url('https://i.pinimg.com/1200x/3d/0e/76/3d0e76236ab910e448c0392122b176b9.jpg')",
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
           }}
           className="rounded-lg mt-8"
         >
-          <div className="max-w-7xl mx-auto px-2 md:px-2 lg:px-8 grid grid-cols-2 gap-5 py-7 md:grid-cols-4 lg:grid-cols-5 lg:py-20">
+          <div className="max-w-7xl mx-auto px-2 md:px-2 lg:px-8 grid grid-cols-2 gap-5 py-7 md:grid-cols-4 lg:grid-cols-5 lg:py-20 bg-black/40 rounded-lg">
             {companyData.map((item, idx) => (
-              <div key={idx} className="flex flex-col items-center justify-center">
-                <h1 className="text-white font-bold text-4xl lg:text-5xl">{item.point}</h1>
-                <p className="text-white font-medium text-sm lg:text-base">{item.name}</p>
+              <div
+                key={idx}
+                className="flex flex-col items-center justify-center"
+              >
+                <h1 className="text-white font-bold text-4xl lg:text-5xl">
+                  {item.point}
+                </h1>
+                <p className="text-white font-medium text-sm lg:text-base">
+                  {item.name}
+                </p>
               </div>
             ))}
           </div>

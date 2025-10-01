@@ -8,11 +8,11 @@ const Form = () => {
         <div className="lg:w-[70%]">
           <h3 className="text-[#3BB77E] font-semibold mb-1">Contact form</h3>
           <h1 className="text-[#253D4E] font-bold text-2xl mb-2 lg:text-4xl">
-            Drop Us a Line
+            Contact Our Mobile Experts
           </h1>
           <p className="font-medium text-sm text-[#B6B6B6] mb-3">
-            Your email address will not be published. Required fields are
-            marked*
+            Have questions about smartphones, accessories, or your order? Fill
+            out the form below and our team will reach out to you shortly.
           </p>
           <div className="grid grid-cols-1 gap-5 lg:grid-cols-2">
             <input
@@ -47,8 +47,12 @@ const Form = () => {
           </div>
         </div>
         {/* right */}
-        <div className="hidden lg:block lg:w-[30%]">
-          <img src="/images/contact.png" alt="" />
+        <div className="hidden lg:block lg:w-[30%] rounded-lg">
+          <img
+            src="https://i.pinimg.com/736x/c8/58/a9/c858a90434ac5fc1fa2f12c8ad9d5591.jpg"
+            alt=""
+            className="rounded-lg"
+          />
         </div>
       </div>
     </div>
