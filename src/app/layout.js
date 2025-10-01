@@ -5,6 +5,7 @@ import "./globals.css";
 import "leaflet/dist/leaflet.css";
 import { Provider } from "react-redux";
 import { store } from "@/store/store";
+import { Toaster } from "react-hot-toast";
 
 const quicksand = Quicksand({
   subsets: ["latin"],
@@ -22,6 +23,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`${quicksand.variable} antialiased`}>
         <Provider store={store}> {children}</Provider>
+        <Toaster position="top-right" reverseOrder={false} />
       </body>
     </html>
   );
