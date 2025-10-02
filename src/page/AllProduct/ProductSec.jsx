@@ -29,18 +29,18 @@ const products = [
     image:
       "https://i.pinimg.com/736x/aa/ff/a3/aaffa3f6b3eccfd7d80f9f4b8823b5b4.jpg",
     thubimg1:
-      "https://i.pinimg.com/736x/aa/ff/a3/aaffa3f6b3eccfd7d80f9f4b8823b5b4.jpg",
+      "https://i.pinimg.com/736x/83/73/41/8373410d50981e10b8c5e83d1fe3f285.jpg",
     thubimg2:
-      "https://i.pinimg.com/736x/aa/ff/a3/aaffa3f6b3eccfd7d80f9f4b8823b5b4.jpg",
+      "https://i.pinimg.com/1200x/35/9c/d1/359cd120e8f516cb50d30349c09303d9.jpg",
     thubimg3:
-      "https://i.pinimg.com/736x/aa/ff/a3/aaffa3f6b3eccfd7d80f9f4b8823b5b4.jpg",
+      "https://i.pinimg.com/736x/04/32/4b/04324b404e3e68b71e91e3518836dcd5.jpg",
     thubimg4:
-      "https://i.pinimg.com/736x/aa/ff/a3/aaffa3f6b3eccfd7d80f9f4b8823b5b4.jpg",
+      "https://i.pinimg.com/1200x/a8/f1/f6/a8f1f6f9db849e8811d521c62ce744b8.jpg",
     rating: 4,
     sold: 5,
     price: "$21.00",
     discountPrice: "$24.00",
-    brand: "Hambger Hel",
+    brand: "Samsung",
     discountPercent: "8%",
     badge: "Hot",
     category: "samsung",
@@ -53,7 +53,7 @@ const products = [
     sold: 5,
     price: "$21.00",
     discountPrice: "$24.00",
-    brand: "Hambger Hel",
+    brand: "Samsung",
     discountPercent: "8%",
     badge: "Hot",
     category: "samsung",

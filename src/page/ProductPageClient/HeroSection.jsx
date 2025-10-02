@@ -24,7 +24,7 @@ const HeroSection = ({ product }) => {
           {/* left */}
           <div className="flex flex-col gap-5 md:w-[45%] lg:w-[45%]">
             {/* main image */}
-            <div className="w-full rounded-lg border border-[#ECECEC] flex items-center justify-center h-90 p-12 lg:h-104 lg:p-16">
+            <div className="w-full rounded-lg border border-[#ECECEC] flex items-center justify-center h-90 p-12 lg:h-104 lg:p-16 lg:px-32">
               <img
                 src={product.image}
                 alt=""
