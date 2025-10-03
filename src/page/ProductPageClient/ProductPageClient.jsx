@@ -2,6 +2,7 @@
 
 import { useSelector } from "react-redux";
 import HeroSection from "./HeroSection";
+import ProductDescription from "./ProductDescription";
 
 export default function ProductPageClient() {
   const product = useSelector((state) => state.product.selectedProduct);
@@ -11,6 +12,7 @@ export default function ProductPageClient() {
   return (
     <div>
       <HeroSection product={product} />
+      <ProductDescription product={product} />
     </div>
   );
 }

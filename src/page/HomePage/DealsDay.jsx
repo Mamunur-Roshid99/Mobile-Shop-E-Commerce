@@ -9,53 +9,123 @@ import { useDispatch } from "react-redux";
 
 const hotDeals = [
   {
-    title: "iPhone 15 Pro",
+    title: "Samsung Galaxy S24 Ultra",
     image:
-      "https://i.pinimg.com/736x/65/93/97/659397341f357263998a223e7b638045.jpg",
+      "https://i.pinimg.com/736x/55/2e/89/552e89221041136fda31d130607d4ce5.jpg",
+    thubimg1:
+      "https://i.pinimg.com/736x/83/73/41/8373410d50981e10b8c5e83d1fe3f285.jpg",
+    thubimg2:
+      "https://i.pinimg.com/1200x/35/9c/d1/359cd120e8f516cb50d30349c09303d9.jpg",
+    thubimg3:
+      "https://i.pinimg.com/736x/04/32/4b/04324b404e3e68b71e91e3518836dcd5.jpg",
+    thubimg4:
+      "https://i.pinimg.com/1200x/a8/f1/f6/a8f1f6f9db849e8811d521c62ce744b8.jpg",
+    description: "Features and Specifications of Samsung Galaxy S24 Ultra",
+    features: ["Easy to grip", "20 min runtime", "Cordless use"],
+    specifications: [
+      "Ergonomic grip",
+      "Self-sharpening blades",
+      "Charging time: 8 hours",
+    ],
+    reviews: [
+      { user: "jhon", comment: "Great product, loved it!" },
+      { user: "dhon", comment: "Battery backup could be better." },
+    ],
     rating: 4,
     sold: 5,
     price: "$21.00",
     discountPrice: "$24.00",
-    provider: "Hambger Hel",
+    brand: "Samsung",
     discountPercent: "8%",
+    badge: "Hot",
+    category: "samsung",
+  },
+  {
+    title: "Samsung Galaxy A54",
+    image:
+      "https://i.pinimg.com/736x/86/51/60/86516007f0deb4bb01515bbf9488268d.jpg",
+    thubimg1:
+      "https://i.pinimg.com/736x/95/14/a8/9514a8a18f1b1718eaa16c339cb2d86b.jpg",
+    thubimg2:
+      "https://i.pinimg.com/1200x/3a/59/33/3a593365981a4c9c1fb6cba791272422.jpg",
+    thubimg3:
+      "https://i.pinimg.com/736x/67/ec/22/67ec225a3d8b5a5e76f14a5640b72da3.jpg",
+    thubimg4:
+      "https://i.pinimg.com/736x/8b/0e/45/8b0e456f6c2f7e0de9fcb87ddf8d009d.jpg",
+    description: "Features and Specifications of Samsung Galaxy A54",
+    features: ["Easy to grip", "20 min runtime", "Cordless use"],
+    specifications: [
+      "Ergonomic grip",
+      "Self-sharpening blades",
+      "Charging time: 8 hours",
+    ],
+    reviews: [],
+    rating: 4,
+    sold: 5,
+    price: "$21.00",
+    discountPrice: "$24.00",
+    brand: "Samsung",
+    discountPercent: "8%",
+    badge: "Hot",
+    category: "samsung",
+  },
+  {
+    title: "iPhone 15 Pro",
+    image:
+      "https://i.pinimg.com/736x/38/fe/b5/38feb515d9bd99b85fcb252edcbf4edf.jpg",
+    thubimg1:
+      "https://i.pinimg.com/736x/b2/01/16/b201169858d006ec598e0a67651c9add.jpg",
+    thubimg2:
+      "https://i.pinimg.com/736x/92/c3/56/92c3569b3dbbf2db67bd144600d59ff7.jpg",
+    thubimg3:
+      "https://i.pinimg.com/736x/5a/aa/86/5aaa863e7b659d95a8ca05f0d6a9b593.jpg",
+    thubimg4:
+      "https://i.pinimg.com/1200x/47/b8/41/47b84137ffbfd0b0bdc85c929c115437.jpg",
+    description: "Features and Specifications of iPhone 15 Pro",
+    features: ["Easy to grip", "20 min runtime", "Cordless use"],
+    specifications: [
+      "Ergonomic grip",
+      "Self-sharpening blades",
+      "Charging time: 8 hours",
+    ],
+    reviews: [],
+    rating: 4,
+    sold: 5,
+    price: "$21.00",
+    discountPrice: "$24.00",
+    brand: "Hambger Hel",
+    discountPercent: "8%",
+    badge: "",
     category: "iPhone",
   },
   {
-    title: "Realme GT 5",
+    title: "iPhone 14",
     image:
-      "https://i.pinimg.com/736x/c6/65/36/c66536c98943a4eff1ef3d545a7398ff.jpg",
+      "https://i.pinimg.com/736x/d9/e3/4e/d9e34e3a48adbfbfe1b3011676a4e813.jpg",
+    thubimg1:
+      "https://i.pinimg.com/736x/da/96/69/da966934f8966eaac12665a0985d98da.jpg",
+    thubimg2:
+      "https://i.pinimg.com/736x/17/aa/d5/17aad593348ac5fbd3442a4d382f3010.jpg",
+    thubimg3:
+      "https://i.pinimg.com/736x/28/75/fe/2875feb2edc07824d2437b828609e75d.jpg",
+    thubimg4:
+      "https://i.pinimg.com/736x/9e/92/c2/9e92c25266a4cab69fec831952347e90.jpg",
+    description: "Features and Specifications of iPhone 14",
+    features: ["Easy to grip", "20 min runtime", "Cordless use"],
+    specifications: [
+      "Ergonomic grip",
+      "Self-sharpening blades",
+      "Charging time: 8 hours",
+    ],
+    reviews: [],
     rating: 4,
     sold: 5,
     price: "$21.00",
     discountPrice: "$24.00",
-    provider: "Hambger Hel",
+    brand: "Hambger Hel",
     discountPercent: "8%",
-    badge: "Hot",
-    category: "realme",
-  },
-  {
-    title: "Vivo X100 Pro",
-    image:
-      "https://i.pinimg.com/736x/5c/12/58/5c125820694ea3607e953c39eac5b918.jpg",
-    rating: 4,
-    sold: 5,
-    price: "$21.00",
-    discountPrice: "$24.00",
-    provider: "Hambger Hel",
-    discountPercent: "8%",
-    category: "vivo",
-  },
-  {
-    title: "Tecno X100 Pro",
-    image:
-      "https://i.pinimg.com/1200x/54/25/e4/5425e42ba53f25ebd85eb8c97d5877eb.jpg",
-    rating: 4,
-    sold: 5,
-    price: "$21.00",
-    discountPrice: "$24.00",
-    provider: "Hambger Hel",
-    discountPercent: "8%",
-    category: "vivo",
+    badge: "New",
+    category: "iPhone",
   },
 ];
 

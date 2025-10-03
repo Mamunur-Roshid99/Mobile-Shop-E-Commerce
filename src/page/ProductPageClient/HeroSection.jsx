@@ -1,4 +1,6 @@
-import React from "react";
+"use client"
+
+import React, { useState } from "react";
 import { FaStar } from "react-icons/fa";
 import { FaRegHeart } from "react-icons/fa";
 
@@ -17,26 +19,34 @@ const HeroSection = ({ product }) => {
       thubimg: product.thubimg4,
     },
   ];
+
+  const [mainImage, setMainImage] = useState(product.image);
   return (
-    <div className="pt-7 pb-12">
+    <div className="pt-7 pb-12 border-b border-b-[#ECECEC]">
       <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-14">
         <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-7">
           {/* left */}
           <div className="flex flex-col gap-5 md:w-[45%] lg:w-[45%]">
             {/* main image */}
-            <div className="w-full rounded-lg border border-[#ECECEC] flex items-center justify-center h-90 p-12 lg:h-104 lg:p-16 lg:px-32">
+            <div className="w-full rounded-lg border border-[#ECECEC] flex items-center justify-center h-90 p-12 lg:h-98 lg:p-16 lg:px-28">
               <img
-                src={product.image}
+                src={mainImage}
                 alt=""
                 className="w-full h-full rounded-lg"
               />
             </div>
             {/* thubnail image */}
-            <div className="flex items-center justify-between gap-2">
+            <div className="flex items-center gap-8 overflow-x-auto flex-nowrap pb-2">
               {thubImage.map((img, idx) => (
                 <div
                   key={idx}
-                  className="border border-[#A2D2C9] rounded-lg p-4 size-22 flex items-center justify-center md:size-18 lg:size-26"
+                  onClick={() => setMainImage(img.thubimg)}
+                  className={`rounded-lg p-4 size-22 flex-shrink-0 flex items-center justify-center md:size-18 lg:size-26 cursor-pointer
+                    ${
+                      mainImage === img.thubimg
+                        ? "border-[#3BB77E] border"
+                        : "border border-[#ECECEC]"
+                    }`}
                 >
                   <img src={img.thubimg} alt="" className="w-full h-full" />
                 </div>
@@ -70,18 +80,29 @@ const HeroSection = ({ product }) => {
                 {product.brand}
               </span>
             </p>
-            {/* price */}
-            <div className="flex items-end gap-3 mb-3">
-              <span className="text-[#3BB77E] font-bold text-lg border-b-2 lg:text-2xl">
-                {product.discountPrice}
-              </span>
-              <del className="text-[#ADADAD] font-medium text-sm border-b-2 border-b-white lg:text-base">
-                {product.price}
-              </del>
+            {/* price & discount par */}
+            <div className="flex items-center gap-5 mb-3">
+              {/* price */}
+              <div className="flex items-end gap-3">
+                <span className="text-[#3BB77E] font-bold text-lg border-b-2 lg:text-2xl">
+                  {product.discountPrice}
+                </span>
+                <del className="text-[#ADADAD] font-medium text-sm border-b-2 border-b-white lg:text-base">
+                  {product.price}
+                </del>
+              </div>
+              {/* discount per */}
+              {product.discountPercent && (
+                <div className="text-red-500 font-semibold text-sm bg-[#F5F5F5] rounded-sm px-3 py-1">
+                  {product.discountPercent}
+                </div>
+              )}
             </div>
             {/* color */}
             <div className="flex flex-col gap-2 mb-3">
-              <h1 className="text-[#253D4E] font-bold text-sm lg:text-base">Color:</h1>
+              <h1 className="text-[#253D4E] font-bold text-sm lg:text-base">
+                Color:
+              </h1>
               {/* div */}
               <div className="flex items-center justify-between gap-2 lg:justify-start">
                 {thubImage.map((img, idx) => (
@@ -96,7 +117,9 @@ const HeroSection = ({ product }) => {
             </div>
             {/* quantity */}
             <div className="flex flex-col gap-2 mb-4">
-              <h1 className="text-[#253D4E] font-bold text-sm lg:text-base">Quantity:</h1>
+              <h1 className="text-[#253D4E] font-bold text-sm lg:text-base">
+                Quantity:
+              </h1>
               <div className="flex items-center border border-[#ECECEC] rounded-sm overflow-hidden w-max">
                 {/* decrement */}
                 <button
