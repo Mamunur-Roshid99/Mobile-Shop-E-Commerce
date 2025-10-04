@@ -5,6 +5,7 @@ import { addToCart } from "@/store/cartSlice";
 import { setSelectedProduct } from "@/store/productSlice";
 import { useRouter } from "next/navigation";
 import React, { useState, useEffect } from "react";
+import toast from "react-hot-toast";
 import { FaStar } from "react-icons/fa";
 import { IoCartOutline } from "react-icons/io5";
 import { useDispatch } from "react-redux";
