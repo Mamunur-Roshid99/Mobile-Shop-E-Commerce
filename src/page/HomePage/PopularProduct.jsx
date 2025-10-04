@@ -7,11 +7,13 @@ import Link from "next/link";
 import { useDispatch } from "react-redux";
 import { useRouter } from "next/navigation";
 import { setSelectedProduct } from "@/store/productSlice";
-
+import { addToCart } from "@/store/cartSlice";
+import toast from "react-hot-toast";
 
 // sample products (dummy)
 const products = [
   {
+    id: 1,
     title: "Samsung Galaxy S24 Ultra",
     image:
       "https://i.pinimg.com/736x/aa/ff/a3/aaffa3f6b3eccfd7d80f9f4b8823b5b4.jpg",
@@ -44,6 +46,7 @@ const products = [
     category: "samsung",
   },
   {
+    id: 2,
     title: "Samsung Galaxy A54",
     image:
       "https://i.pinimg.com/1200x/8c/49/c0/8c49c093e87967598c63c87bd7e39000.jpg",
@@ -73,6 +76,7 @@ const products = [
     category: "samsung",
   },
   {
+    id: 3,
     title: "iPhone 15 Pro",
     image:
       "https://i.pinimg.com/736x/8e/1c/37/8e1c3744a4f11b8a6d5d053c59e9a75c.jpg",
@@ -102,6 +106,7 @@ const products = [
     category: "iPhone",
   },
   {
+    id: 4,
     title: "iPhone 14",
     image:
       "https://i.pinimg.com/736x/a0/76/34/a07634ff404e2b59f613f04509067f4c.jpg",
@@ -131,6 +136,7 @@ const products = [
     category: "iPhone",
   },
   {
+    id: 5,
     title: "Vivo X100 Pro",
     image:
       "https://i.pinimg.com/736x/6b/fc/95/6bfc95a7c6e34a375c072d2428a5d769.jpg",
@@ -163,6 +169,7 @@ const products = [
     category: "vivo",
   },
   {
+    id: 6,
     title: "Vivo V29",
     image:
       "https://i.pinimg.com/736x/4a/63/df/4a63df10317e3580656ce283b7210a0c.jpg",
@@ -192,6 +199,7 @@ const products = [
     category: "vivo",
   },
   {
+    id: 7,
     title: "Xiaomi 14 Pro",
     image:
       "https://i.pinimg.com/1200x/5d/d7/2a/5dd72a5695c77afdd551c2b12067322a.jpg",
@@ -221,6 +229,7 @@ const products = [
     category: "xiaomi",
   },
   {
+    id: 8,
     title: "Redmi Note 13",
     image:
       "https://i.pinimg.com/736x/ac/bb/28/acbb28dc5b8e8c6876873e0c485e25c4.jpg",
@@ -250,6 +259,7 @@ const products = [
     category: "xiaomi",
   },
   {
+    id: 9,
     title: "Realme GT 5",
     image:
       "https://i.pinimg.com/1200x/5a/5e/8b/5a5e8b91bd4e8d329918d6275fc7aaf5.jpg",
@@ -279,6 +289,7 @@ const products = [
     category: "realme",
   },
   {
+    id: 10,
     title: "Realme Narzo 60x",
     image:
       "https://i.pinimg.com/1200x/98/34/c1/9834c1d956e1cd61c18ade02d73863ea.jpg",
@@ -308,6 +319,7 @@ const products = [
     category: "realme",
   },
   {
+    id: 11,
     title: "MacBook Pro 16",
     image:
       "https://i.pinimg.com/1200x/c5/95/c9/c595c9dc092cb7fbfecedde02a6952ae.jpg",
@@ -337,6 +349,7 @@ const products = [
     category: "laptop",
   },
   {
+    id: 12,
     title: "Dell XPS 13",
     image:
       "https://i.pinimg.com/1200x/ff/b4/08/ffb408f8f331a635275e1fa35988c811.jpg",
@@ -366,6 +379,7 @@ const products = [
     category: "laptop",
   },
   {
+    id: 13,
     title: "Apple Watch Series 9",
     image:
       "https://i.pinimg.com/736x/11/86/54/11865435c73c053c79cd8ad90b385da8.jpg",
@@ -395,6 +409,7 @@ const products = [
     category: "smartwatch",
   },
   {
+    id: 14,
     title: "Samsung Galaxy Watch 6",
     image:
       "https://i.pinimg.com/736x/4f/5b/06/4f5b069edf4944acdf0f7658bbc94c69.jpg",
@@ -424,6 +439,7 @@ const products = [
     category: "smartwatch",
   },
   {
+    id: 15,
     title: "AirPods Pro 2",
     image:
       "https://i.pinimg.com/736x/7f/79/eb/7f79eb40946e64987220158234c78df4.jpg",
@@ -453,6 +469,7 @@ const products = [
     category: "airpods",
   },
   {
+    id: 16,
     title: "AirPods 3rd Gen",
     image:
       "https://i.pinimg.com/1200x/a4/b7/49/a4b749ae448794555252d2ac9c70716c.jpg",
@@ -482,6 +499,7 @@ const products = [
     category: "airpods",
   },
   {
+    id: 17,
     title: "iPhone 15 Silicone Case",
     image:
       "https://i.pinimg.com/1200x/da/35/92/da359288cf4d670c2ef7a231d373ad5c.jpg",
@@ -511,6 +529,7 @@ const products = [
     category: "phonecase",
   },
   {
+    id: 18,
     title: "Samsung S24 Ultra Protective Case",
     image:
       "https://i.pinimg.com/1200x/1a/c9/02/1ac9020077de789859ea976c1260d9e9.jpg",
@@ -541,6 +560,7 @@ const products = [
     category: "phonecase",
   },
   {
+    id: 19,
     title: 'Samsung Neo QLED 55"',
     image:
       "https://i.pinimg.com/736x/cd/c8/44/cdc84400e429fd160673ec83bfe9aa76.jpg",
@@ -570,6 +590,7 @@ const products = [
     category: "smarttv",
   },
   {
+    id: 20,
     title: 'LG OLED C3 65"',
     image:
       "https://i.pinimg.com/1200x/ab/48/0f/ab480f1640cda7ed27301524141b6635.jpg",
@@ -624,7 +645,7 @@ const PopularProduct = () => {
 
         {/* products grid */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 mt-8">
-          {products.slice(0,8).map((product, index) => (
+          {products.slice(0, 8).map((product, index) => (
             <div
               key={`${product.id}-${index}`}
               onClick={() => {
@@ -683,7 +704,14 @@ const PopularProduct = () => {
                     </del>
                   </div>
                   {/*  */}
-                  <div className="flex gap-2 bg-[#DEF9EC] items-center justify-center rounded-sm py-2 text-[#3BB77E] font-bold cursor-pointer lg:px-3 hover:bg-[#3BB77E] hover:text-white duration-500">
+                  <div
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      dispatch(addToCart(product));
+                      toast.success("Product added to cart!");
+                    }}
+                    className="flex gap-2 bg-[#DEF9EC] items-center justify-center rounded-sm py-2 text-[#3BB77E] font-bold cursor-pointer lg:px-3 hover:bg-[#3BB77E] hover:text-white duration-500"
+                  >
                     <div className="flex items-center justify-center">
                       <IoCartOutline />
                     </div>

@@ -1,10 +1,14 @@
-"use client"
+"use client";
 
+import { addToWishlist } from "@/store/wishlistSlice";
 import React, { useState } from "react";
+import toast from "react-hot-toast";
 import { FaStar } from "react-icons/fa";
 import { FaRegHeart } from "react-icons/fa";
+import { useDispatch } from "react-redux";
 
 const HeroSection = ({ product }) => {
+  const dispatch = useDispatch();
   const thubImage = [
     {
       thubimg: product.thubimg1,
@@ -149,7 +153,14 @@ const HeroSection = ({ product }) => {
               <button className="bg-[#3BB77E] font-bold text-white w-[85%] text-sm py-3 rounded-sm cursor-pointer lg:text-base">
                 Buy Now
               </button>
-              <div className="w-[15%] border border-[#F1F1F1] flex items-center justify-center py-3 rounded-sm text-[#333333] cursor-pointer">
+              <div
+                onClick={(e) => {
+                  e.stopPropagation();
+                  dispatch(addToWishlist(product));
+                  toast.success("Product added to wishlist!");
+                }}
+                className="w-[15%] border border-[#F1F1F1] flex items-center justify-center py-3 rounded-sm text-[#333333] cursor-pointer"
+              >
                 <FaRegHeart />
               </div>
             </div>

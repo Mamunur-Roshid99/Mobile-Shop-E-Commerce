@@ -1,35 +1,18 @@
+"use client";
+
+import { setSelectedProduct } from "@/store/productSlice";
+import { removeFromWishlist } from "@/store/wishlistSlice";
+import { useRouter } from "next/navigation";
 import React from "react";
 import { FaHeart } from "react-icons/fa6";
 import { LuTrash2 } from "react-icons/lu";
-
-const products = [
-  {
-    id: 1,
-    title: "Foster Farms Takeout Crispy Classic",
-    category: "Baking material",
-    image: "/images/chips.png",
-    rating: 4,
-    sold: 5,
-    price: "$21.00",
-    discountPrice: "$24.00",
-    provider: "Hambger Hel",
-    discountPercent: "8%",
-  },
-  {
-    id: 2,
-    title: "Foster Farms Takeout Crispy Classic",
-    category: "Fresh Fruits",
-    image: "/images/product1.png",
-    rating: 4,
-    sold: 5,
-    price: "$21.00",
-    discountPrice: "$24.00",
-    provider: "Hambger Hel",
-    discountPercent: "8%",
-  },
-];
+import { useDispatch, useSelector } from "react-redux";
 
 const WishListHero = () => {
+  const dispatch = useDispatch();
+  const router = useRouter()
+  const products = useSelector((state) => state.wishlist.items);
+  const count = products.length;
   return (
     <div className="pt-5 pb-12">
       <div className="max-w-7xl mx-auto px-8 md:px-12 lg:px-22">
@@ -46,7 +29,12 @@ const WishListHero = () => {
                     alt={item.title}
                     className="object-cover w-full h-64"
                   />
-                  <button className="absolute p-2 transition-colors bg-white rounded-full shadow-md top-2 right-2 hover:bg-gray-50">
+                  <button
+                    onClick={() => {
+                      dispatch(removeFromWishlist(item.id));
+                    }}
+                    className="absolute p-2 transition-colors bg-white rounded-full shadow-md top-2 right-2 hover:bg-gray-50"
+                  >
                     <FaHeart className="w-4 h-4 text-red-500 fill-current" />
                   </button>
                 </div>
@@ -66,11 +54,22 @@ const WishListHero = () => {
                   </div>
 
                   <div className="space-y-2">
-                    <div className="text-center bg-[#DEF9EC] rounded-sm py-2 text-[#3BB77E] font-bold cursor-pointer lg:px-3 hover:bg-[#3BB77E] hover:text-white duration-500">
+                    <div
+                      onClick={() => {
+                        dispatch(setSelectedProduct(item));
+                        router.push(`/product/${item.id}`);
+                      }}
+                      className="text-center bg-[#DEF9EC] rounded-sm py-2 text-[#3BB77E] font-bold cursor-pointer lg:px-3 hover:bg-[#3BB77E] hover:text-white duration-500"
+                    >
                       View Details
                     </div>
 
-                    <button className="flex items-center justify-center w-full gap-2 px-4 py-2 text-red-600 border border-red-300 rounded hover:bg-red-50">
+                    <button
+                      onClick={() => {
+                        dispatch(removeFromWishlist(item.id));
+                      }}
+                      className="flex items-center justify-center w-full gap-2 px-4 py-2 text-red-600 border border-red-300 rounded hover:bg-red-50"
+                    >
                       <LuTrash2 className="w-4 h-4" />
                       Remove
                     </button>
@@ -80,6 +79,11 @@ const WishListHero = () => {
             );
           })}
         </div>
+        {count === 0 && (
+          <p className="text-center mt-10 text-gray-500">
+            Your wishlist is empty
+          </p>
+        )}
       </div>
     </div>
   );

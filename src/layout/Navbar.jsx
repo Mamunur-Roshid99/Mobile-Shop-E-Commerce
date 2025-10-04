@@ -10,6 +10,7 @@ import CartDrawer from "@/components/CartDrawer";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
+import { useSelector } from "react-redux";
 
 const categories = [
   { name: "Samsung", slug: "samsung" },
@@ -25,7 +26,8 @@ const categories = [
 ];
 
 const Navbar = () => {
-  const [wishlistCount, setWishlistCount] = useState(2);
+  const wishlistItems = useSelector((state) => state.wishlist.items);
+  const wishlistCount = wishlistItems.length;
   const [searchTerm, setSearchTerm] = useState("");
   const router = useRouter();
 

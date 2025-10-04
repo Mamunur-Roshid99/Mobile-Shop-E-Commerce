@@ -1,9 +1,11 @@
 "use client";
 
 import CountdownTimer from "@/components/CountdownTimer";
+import { addToCart } from "@/store/cartSlice";
 import { setSelectedProduct } from "@/store/productSlice";
 import { useRouter } from "next/navigation";
 import React from "react";
+import toast from "react-hot-toast";
 import { IoCartOutline } from "react-icons/io5";
 import { useDispatch } from "react-redux";
 
@@ -175,7 +177,14 @@ const HeroSection = () => {
                     </del>
                   </div>
                   {/*  */}
-                  <div className="flex gap-2 bg-[#DEF9EC] items-center justify-center rounded-sm py-2 text-[#3BB77E] font-bold cursor-pointer lg:px-3 hover:bg-[#3BB77E] hover:text-white duration-500">
+                  <div
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      dispatch(addToCart(item));
+                      toast.success("Product added to cart!");
+                    }}
+                    className="flex gap-2 bg-[#DEF9EC] items-center justify-center rounded-sm py-2 text-[#3BB77E] font-bold cursor-pointer lg:px-3 hover:bg-[#3BB77E] hover:text-white duration-500"
+                  >
                     <div className="flex items-center justify-center">
                       <IoCartOutline />
                     </div>

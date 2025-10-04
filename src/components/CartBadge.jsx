@@ -3,7 +3,7 @@ import { FiShoppingCart } from "react-icons/fi";
 import Badge from "@mui/material/Badge";
 import IconButton from "@mui/material/IconButton";
 
-const CartBadge = ({ count = 0, onClick }) => {
+const CartBadge = ({ count, onClick }) => {
   return (
     <IconButton onClick={onClick}>
       <Badge

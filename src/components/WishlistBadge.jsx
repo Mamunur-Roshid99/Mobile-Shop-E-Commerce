@@ -3,7 +3,7 @@ import { FaRegHeart } from "react-icons/fa";
 import Badge from "@mui/material/Badge";
 import IconButton from "@mui/material/IconButton";
 
-const WishlistBadge = ({ count = 0, onClick }) => {
+const WishlistBadge = ({ count, onClick }) => {
   return (
     <IconButton onClick={onClick}>
       <Badge
