@@ -1,6 +1,8 @@
 "use client";
 
+import { setSelectedProduct } from "@/store/productSlice";
 import { addToWishlist } from "@/store/wishlistSlice";
+import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import toast from "react-hot-toast";
 import { FaStar } from "react-icons/fa";
@@ -9,6 +11,7 @@ import { useDispatch } from "react-redux";
 
 const HeroSection = ({ product }) => {
   const dispatch = useDispatch();
+  const router = useRouter();
   const thubImage = [
     {
       thubimg: product.thubimg1,
@@ -32,7 +35,7 @@ const HeroSection = ({ product }) => {
           {/* left */}
           <div className="flex flex-col gap-5 md:w-[45%] lg:w-[45%]">
             {/* main image */}
-            <div className="w-full rounded-lg border border-[#ECECEC] flex items-center justify-center h-90 p-12 lg:h-98 lg:p-16 lg:px-28">
+            <div className="w-full rounded-lg border border-[#ECECEC] flex items-center justify-center h-88 p-12 px-16 lg:h-98 lg:p-16 lg:px-28">
               <img
                 src={mainImage}
                 alt=""
@@ -150,7 +153,13 @@ const HeroSection = ({ product }) => {
 
             {/* button & wishlist */}
             <div className="flex items-center justify-between gap-5">
-              <button className="bg-[#3BB77E] font-bold text-white w-[85%] text-sm py-3 rounded-sm cursor-pointer lg:text-base">
+              <button
+                onClick={() => {
+                  dispatch(setSelectedProduct(product));
+                  router.push("/checkout");
+                }}
+                className="bg-[#3BB77E] font-bold text-white w-[85%] text-sm py-3 rounded-sm cursor-pointer lg:text-base"
+              >
                 Buy Now
               </button>
               <div
