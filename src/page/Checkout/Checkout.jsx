@@ -158,13 +158,15 @@ const Checkout = () => {
             <div className="mt-4 bg-[#F6F6F6] rounded-sm p-2">
               <div className="flex items-center gap-5">
                 {/* img */}
-                <div className="w-22 h-16 rounded-sm lg:w-[20%]">
-                  <img
-                    src={product.image}
-                    alt={product.title}
-                    className="w-full h-full rounded-sm"
-                  />
-                </div>
+                {product && (
+                  <div className="w-22 h-16 rounded-sm lg:w-[20%]">
+                    <img
+                      src={product.image}
+                      alt={product.title}
+                      className="w-full h-full rounded-sm"
+                    />
+                  </div>
+                )}
                 <div className="flex flex-col gap-2 lg:flex-row lg:items-center lg:justify-between lg:w-[80%]">
                   <div className="text-[#253D4E] font-semibold text-sm lg:text-xl">
                     <p>{product.title}</p>
