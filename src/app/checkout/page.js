@@ -4,6 +4,7 @@ import TopNavbar from "@/layout/TopNavbar";
 import Checkout from "@/page/Checkout/Checkout";
 import PageBreadcrumb from "@/components/PageBreadcrumb";
 import React from "react";
+import Footer from "@/layout/Footer";
 
 export default function page() {
   return (
@@ -13,6 +14,7 @@ export default function page() {
       <NavLink />
       <PageBreadcrumb pageName="Checkout" pageLink="/checkout" />
       <Checkout />
+      <Footer />
     </div>
   );
 }
