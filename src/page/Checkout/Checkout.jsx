@@ -104,7 +104,7 @@ const Checkout = () => {
                     className="focus:outline-none border border-[#ECECEC] text-sm text-[#838383] font-medium rounded-sm px-3 py-3 placeholder:text-[#838383] w-full"
                   />
                 </div>
-                <div className="col-span-2">
+                <div className="lg:col-span-2">
                   <input
                     type="text"
                     placeholder="Phone Number"
@@ -118,7 +118,7 @@ const Checkout = () => {
                     className="focus:outline-none border border-[#ECECEC] text-sm text-[#838383] font-medium rounded-sm px-3 py-3 placeholder:text-[#838383] w-full"
                   />
                 </div>
-                <div className="col-span-3">
+                <div className="lg:col-span-3">
                   <textarea
                     name=""
                     id=""
@@ -127,14 +127,14 @@ const Checkout = () => {
                     className="focus:outline-none border border-[#ECECEC] text-sm text-[#838383] font-medium rounded-sm px-3 py-3 placeholder:text-[#838383] w-full"
                   ></textarea>
                 </div>
-                <div className="col-span-3">
+                <div className="lg:col-span-3">
                   <input
                     type="text"
                     placeholder="District"
                     className="focus:outline-none border border-[#ECECEC] text-sm text-[#838383] font-medium rounded-sm px-3 py-3 placeholder:text-[#838383] w-full"
                   />
                 </div>
-                <div className="col-span-3">
+                <div className="lg:col-span-3">
                   <input
                     type="text"
                     placeholder="Thana"
