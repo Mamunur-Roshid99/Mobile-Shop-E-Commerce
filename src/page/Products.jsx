@@ -75,6 +75,9 @@ const Products = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [isAddOpen, setIsAddOpen] = useState(false);
   const [editProduct, setEditProduct] = useState(null);
+  const [fileName, setFileName] = useState("No file chosen");
+  const [preview, setPreview] = useState(null);
+  const [thumbnails, setThumbnails] = useState([]);
 
   const filteredProducts = mockProducts.filter(
     (product) =>
@@ -109,6 +112,26 @@ const Products = () => {
         return "bg-gray-100 text-gray-700";
     }
   };
+
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      setFileName(file.name);
+      setPreview(URL.createObjectURL(file)); // preview তৈরি
+    } else {
+      setFileName("No file chosen");
+      setPreview(null);
+    }
+  };
+
+const handleThumbnailChange = (e) => {
+  const selectedFiles = Array.from(e.target.files);
+  const previewUrls = selectedFiles.map((file) => URL.createObjectURL(file));
+
+  // Append new thumbnails instead of replacing
+  setThumbnails((prev) => [...prev, ...previewUrls]);
+};
+
 
   return (
     <div className="space-y-6">
@@ -196,89 +219,261 @@ const Products = () => {
       {/* Add/Edit Modal */}
       {isAddOpen && (
         <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50">
-          <div className="bg-white rounded-lg p-6 w-full max-w-xl shadow-lg relative">
+          <div className="bg-white rounded-lg p-6 w-full max-w-xl shadow-lg relative mx-4 max-h-[90vh] overflow-y-auto">
             <div className="flex items-center justify-between mb-4">
-              <h2 className="text-lg font-bold">Add New Product</h2>
-              <GiCrossMark onClick={() => setIsAddOpen(false)} />
+              <h2 className="text-lg font-bold text-[#3BB77E]">
+                Add New Product
+              </h2>
+              <GiCrossMark
+                onClick={() => setIsAddOpen(false)}
+                className="cursor-pointer"
+              />
             </div>
             <form onSubmit={handleSubmit} className="space-y-4">
-              <div className="grid grid-cols-2 gap-4">
+              {/* Product Name */}
+              <div className="flex flex-col gap-2">
+                <label htmlFor="name" className="font-bold text-[14px]">
+                  Product Name
+                </label>
+                <input
+                  type="text"
+                  placeholder="Product Name"
+                  defaultValue={editProduct?.name || ""}
+                  className="focus:outline-none border border-[#ECECEC] text-[13px] text-[#253D4E] font-medium rounded-sm px-3 py-2 placeholder:text-[#838383] focus:ring-1 focus:ring-[#3BB77E]"
+                  required
+                />
+              </div>
+
+              {/* Category */}
+              <div className="flex flex-col gap-2">
+                <label htmlFor="name" className="font-bold text-[14px]">
+                  Category
+                </label>
+                <select
+                  className="w-full focus:outline-none border border-[#ECECEC] text-[13px] text-[#253D4E] font-medium rounded-sm px-3 py-2 placeholder:text-[#838383] focus:ring-1 focus:ring-[#3BB77E] cursor-pointer"
+                  required
+                >
+                  <option value="" disabled>
+                    Select Category
+                  </option>
+                  <option value="Smartphones">Smartphones</option>
+                  <option value="Accessories">Accessories</option>
+                  <option value="Tablets">Tablets</option>
+                  <option value="Laptops">Laptops</option>
+                  <option value="Wearables">Wearables</option>
+                </select>
+              </div>
+
+              {/* Main Image + Multiple Thumbnails */}
+              <div className="flex flex-col gap-2">
+                <label className="font-bold text-[14px]">Product Image</label>
+
+                {/* Main Image Div */}
+                <div
+                  className="flex items-center gap-3 border border-[#ECECEC] rounded-sm px-3 py-2 cursor-pointer hover:border-[#3BB77E] transition"
+                  onClick={() =>
+                    document.getElementById("mainFileInput").click()
+                  }
+                >
+                  <span className="text-[13px] font-semibold">Choose File</span>
+                  <span className="text-xs text-[#253D4E] truncate max-w-[200px]">
+                    {fileName}
+                  </span>
+
+                  <input
+                    id="mainFileInput"
+                    type="file"
+                    name="image"
+                    accept="image/*"
+                    onChange={handleFileChange}
+                    className="hidden"
+                  />
+                </div>
+
+                {/* Main Preview */}
+                {preview && (
+                  <div className="mt-2">
+                    <img
+                      src={preview}
+                      alt="Preview"
+                      className="w-18 lg:w-24 h-18 lg:h-24 object-cover border border-[#ECECEC] rounded-sm shadow-sm"
+                    />
+                  </div>
+                )}
+
+                {/* Multiple Thumbnails */}
+                <label className="font-bold text-[14px] mt-4">
+                  Upload Gallery
+                </label>
+                <div
+                  className="flex items-center gap-3 border border-[#ECECEC] rounded-sm px-3 py-2 cursor-pointer hover:border-[#3BB77E] transition"
+                  onClick={() =>
+                    document.getElementById("thumbFileInput").click()
+                  }
+                >
+                  <span className="text-[13px] font-semibold">
+                    Choose Files
+                  </span>
+                  <span className="text-xs text-[#253D4E] truncate max-w-[200px]">
+                    {thumbnails.length > 0
+                      ? `${thumbnails.length} file(s) selected`
+                      : "No file chosen"}
+                  </span>
+
+                  <input
+                    id="thumbFileInput"
+                    type="file"
+                    name="thumbnails"
+                    accept="image/*"
+                    onChange={handleThumbnailChange}
+                    className="hidden"
+                    multiple
+                  />
+                </div>
+
+                {/* Thumbnail Previews */}
+                {thumbnails.length > 0 && (
+                  <div className="mt-2 flex flex-wrap gap-2">
+                    {thumbnails.map((src, index) => (
+                      <div
+                        key={index}
+                        className="w-18 lg:w-24 h-18 lg:h-24 border border-[#ECECEC] rounded-sm overflow-hidden shadow-sm relative"
+                      >
+                        <img
+                          src={src}
+                          alt={`Thumbnail ${index + 1}`}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              {/* Description */}
+              <div className="flex flex-col gap-2">
+                <label className="font-bold text-[14px]">Description</label>
+                <textarea
+                  name="description"
+                  placeholder="Enter product description..."
+                  rows="3"
+                  className="focus:outline-none border border-[#ECECEC] text-[13px] text-[#253D4E] font-medium rounded-sm px-3 py-2 placeholder:text-[#838383] focus:ring-1 focus:ring-[#3BB77E]"
+                  required
+                ></textarea>
+              </div>
+
+              {/* Features */}
+              <div className="flex flex-col gap-2">
+                <label className="font-bold text-[14px]">
+                  Features (comma separated)
+                </label>
+                <input
+                  type="text"
+                  name="features"
+                  placeholder="Easy to grip, 20 min runtime, Cordless use"
+                  className="focus:outline-none border border-[#ECECEC] text-[13px] text-[#253D4E] font-medium rounded-sm px-3 py-2 placeholder:text-[#838383] focus:ring-1 focus:ring-[#3BB77E]"
+                  required
+                />
+              </div>
+
+              {/* Specifications */}
+              <div className="flex flex-col gap-2">
+                <label className="font-bold text-[14px]">
+                  Specifications (comma separated)
+                </label>
+                <input
+                  type="text"
+                  name="specifications"
+                  placeholder="Ergonomic grip, Self-sharpening blades, Charging time: 8 hours"
+                  className="focus:outline-none border border-[#ECECEC] text-[13px] text-[#253D4E] font-medium rounded-sm px-3 py-2 placeholder:text-[#838383] focus:ring-1 focus:ring-[#3BB77E]"
+                  required
+                />
+              </div>
+
+              {/* Price */}
+              <div className="grid grid-cols-2 gap-3">
                 <div className="flex flex-col gap-2">
-                  <label htmlFor="name" className="font-bold text-[15px]">
-                    Product Name
-                  </label>
+                  <label className="font-bold text-[14px]">Price</label>
                   <input
                     type="text"
-                    placeholder="Product Name"
-                    defaultValue={editProduct?.name || ""}
-                    className="focus:outline-none border border-[#ECECEC] text-sm text-[#838383] font-medium rounded-sm px-3 py-2 placeholder:text-[#838383] focus:ring-1 focus:ring-[#3BB77E]"
+                    name="price"
+                    placeholder="$21.00"
+                    className="focus:outline-none border border-[#ECECEC] text-[13px] text-[#253D4E] font-medium rounded-sm px-3 py-2 placeholder:text-[#838383] focus:ring-1 focus:ring-[#3BB77E]"
                     required
                   />
                 </div>
-                <input
-                  type="text"
-                  placeholder="SKU"
-                  defaultValue={editProduct?.sku || ""}
-                  className="border px-3 py-2 rounded w-full"
-                  required
-                />
-              </div>
-              <div className="grid grid-cols-2 gap-4">
-                <div className="grid grid-cols-2 gap-4">
-                  <select
-                    defaultValue={editProduct?.category || ""}
-                    className="border px-3 py-2 rounded w-full"
-                    required
-                  >
-                    <option value="">Select Category</option>
-                    <option value="Smartphones">Smartphones</option>
-                    <option value="Accessories">Accessories</option>
-                    <option value="Tablets">Tablets</option>
-                    <option value="Laptops">Laptops</option>
-                    <option value="Wearables">Wearables</option>
-                  </select>
+                <div className="flex flex-col gap-2">
+                  <label className="font-bold text-[14px]">
+                    Discount Price
+                  </label>
+                  <input
+                    type="text"
+                    name="discountPrice"
+                    placeholder="$24.00"
+                    className="focus:outline-none border border-[#ECECEC] text-[13px] text-[#253D4E] font-medium rounded-sm px-3 py-2 placeholder:text-[#838383] focus:ring-1 focus:ring-[#3BB77E]"
+                  />
                 </div>
-                <input
-                  type="number"
-                  placeholder="Price"
-                  defaultValue={editProduct?.price?.replace("$", "") || ""}
-                  className="border px-3 py-2 rounded w-full"
-                  required
-                />
               </div>
-              <div className="grid grid-cols-2 gap-4">
-                <input
-                  type="number"
-                  placeholder="Stock"
-                  defaultValue={editProduct?.stock || ""}
-                  className="border px-3 py-2 rounded w-full"
-                  required
-                />
+
+              {/* Brand */}
+              <div className="flex flex-col gap-2">
+                <label className="font-bold text-[14px]">Brand</label>
                 <input
                   type="text"
-                  placeholder="Status"
-                  defaultValue={editProduct?.status || ""}
-                  className="border px-3 py-2 rounded w-full"
+                  name="brand"
+                  placeholder="Samsung"
+                  className="focus:outline-none border border-[#ECECEC] text-[13px] text-[#253D4E] font-medium rounded-sm px-3 py-2 placeholder:text-[#838383] focus:ring-1 focus:ring-[#3BB77E]"
                   required
                 />
               </div>
-              <div className="flex justify-end gap-2">
-                <button
-                  type="button"
-                  onClick={() => {
-                    setIsAddOpen(false);
-                    setEditProduct(null);
-                  }}
-                  className="px-4 py-2 border rounded hover:bg-gray-100"
-                >
-                  Cancel
-                </button>
-                <button
-                  type="submit"
-                  className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
-                >
-                  {editProduct ? "Update" : "Add"}
-                </button>
+
+              {/* Discount Percent & Badge */}
+              <div className="grid grid-cols-2 gap-3">
+                <div className="flex flex-col gap-2">
+                  <label className="font-bold text-[14px]">
+                    Discount Percent
+                  </label>
+                  <input
+                    type="text"
+                    name="discountPercent"
+                    placeholder="8%"
+                    className="focus:outline-none border border-[#ECECEC] text-[13px] text-[#253D4E] font-medium rounded-sm px-3 py-2 placeholder:text-[#838383] focus:ring-1 focus:ring-[#3BB77E]"
+                  />
+                </div>
+                <div className="flex flex-col gap-2">
+                  <label className="font-bold text-[14px]">Badge</label>
+                  <input
+                    type="text"
+                    name="badge"
+                    placeholder="Hot"
+                    className="focus:outline-none border border-[#ECECEC] text-[13px] text-[#253D4E] font-medium rounded-sm px-3 py-2 placeholder:text-[#838383] focus:ring-1 focus:ring-[#3BB77E]"
+                  />
+                </div>
+              </div>
+
+              {/* Rating & Sold */}
+              <div className="grid grid-cols-2 gap-3">
+                <div className="flex flex-col gap-2">
+                  <label className="font-bold text-[14px]">Rating</label>
+                  <input
+                    type="number"
+                    name="rating"
+                    placeholder="4"
+                    min="1"
+                    max="5"
+                    className="focus:outline-none border border-[#ECECEC] text-[13px] text-[#253D4E] font-medium rounded-sm px-3 py-2 placeholder:text-[#838383] focus:ring-1 focus:ring-[#3BB77E]"
+                  />
+                </div>
+                <div className="flex flex-col gap-2">
+                  <label className="font-bold text-[14px]">Sold</label>
+                  <input
+                    type="number"
+                    name="sold"
+                    placeholder="5"
+                    min="0"
+                    className="focus:outline-none border border-[#ECECEC] text-[13px] text-[#253D4E] font-medium rounded-sm px-3 py-2 placeholder:text-[#838383] focus:ring-1 focus:ring-[#3BB77E]"
+                  />
+                </div>
               </div>
             </form>
           </div>
