@@ -662,7 +662,9 @@ const Products = () => {
       <div className="flex justify-between items-center">
         <div>
           <h1 className="text-2xl font-bold lg:text-3xl">Products</h1>
-          <p className="text-gray-500 text-xs lg:text-sm">Manage your product inventory</p>
+          <p className="text-gray-500 text-xs lg:text-sm">
+            Manage your product inventory
+          </p>
         </div>
         <button
           onClick={() => setIsAddOpen(true)}
@@ -674,14 +676,14 @@ const Products = () => {
 
       {/* Search + Table */}
       <div className="bg-white rounded-sm shadow p-4">
-        <div className="relative mb-4 max-w-sm">
+        <div className="relative mb-4 max-w-sm bg-[#F8FAFC]">
           <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
           <input
             type="text"
             placeholder="Search products..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="pl-10 w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#3BB77E] text-sm"
+            className="pl-10 w-full border border-[#ECECEC] rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#3BB77E] text-sm"
           />
         </div>
 

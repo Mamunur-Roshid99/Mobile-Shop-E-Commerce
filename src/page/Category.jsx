@@ -106,24 +106,24 @@ const Category = () => {
       <div className="flex items-center gap-5">
         <div className="bg-white p-4 lg:p-5 rounded shadow hover:shadow-lg transition">
           <p className="text-sm font-medium">Total Categories</p>
-          <h2 className="text-2xl font-bold mt-2 text-[#253D4E]">5 P</h2>
+          <h2 className="text-2xl font-bold mt-2 text-[#253D4E]">5</h2>
         </div>
         <div className="bg-white p-4 lg:p-5 rounded shadow hover:shadow-lg transition">
           <p className="text-sm font-medium">Total Products</p>
-          <h2 className="text-2xl font-bold mt-2 text-[#253D4E]">525 P</h2>
+          <h2 className="text-2xl font-bold mt-2 text-[#253D4E]">525</h2>
         </div>
       </div>
 
       {/* Search + Table */}
       <div className="bg-white rounded-sm shadow p-4">
-        <div className="relative mb-4 max-w-sm">
+        <div className="relative mb-4 max-w-sm bg-[#F8FAFC]">
           <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
           <input
             type="text"
             placeholder="Search products..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="pl-10 w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#3BB77E] text-sm"
+            className="pl-10 w-full border border-[#ECECEC] rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#3BB77E] text-sm"
           />
         </div>
 
